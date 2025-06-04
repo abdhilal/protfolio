@@ -19,14 +19,11 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./public/
-          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          local-dir: ./             # جذر مشروعك
+          server-dir: /htdocs/      # مجلد المشروع على الاستضافة
           exclude: |
-            fontawesome/**
-            fontawesome/*
-            **/.git*
-            **/node_modules/**
-            **/vendor/**
-            **/tests/**
-            **/.github/**
-          dangerous-clean-slate: false
+            .env
+            public/.htaccess
+          dangerous-clean-slate: false  # مهم جداً لمنع حذف الملفات الموجودة مسبقًا
+
+
