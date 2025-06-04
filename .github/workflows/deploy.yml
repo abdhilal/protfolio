@@ -23,6 +23,7 @@ jobs:
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
           exclude: |
             fontawesome/**
+            fontawesome/*
             **/.git*
             **/node_modules/**
             **/vendor/**
