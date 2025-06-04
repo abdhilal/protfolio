@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{$project->title}} - Abdulrahman Hilal</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>{{ $project->title }} - Abdulrahman Hilal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href={{ asset('fontawesome/css/all.min.css') }}>
     <link rel="stylesheet" href={{ asset('css/style.css') }}>
-<link rel="icon" href="{{ asset('images/my/wallet.png') }}" >
+    <link rel="icon" href="{{ asset('images/my/wallet.png') }}">
 
 </head>
 
@@ -41,7 +42,7 @@
                 <ul class="text-gray-300 mb-4">
 
                     @foreach ($project->features as $feature)
-                        <li class="mb-2"><i class="fas fa-check-circle me-2 text-green-400"></i> 
+                        <li class="mb-2"><i class="fas fa-check-circle me-2 text-green-400"></i>
                             {{ $feature->key_features }}</li>
                     @endforeach
 
@@ -93,17 +94,39 @@
 
                 </div>
 
-                <div class="d-flex justify-content-center gap-3 mt-4">
-                    <a href="https://github.com/your-github/erp-system" target="_blank" rel="noopener noreferrer"
-                        class="btn btn-gradient">
-                        <i class="fab fa-github me-2"></i> View on GitHub
-                    </a>
+                @foreach ($project->links as $link)
+                    @php
+                        $label = null;
+                        $icon = null;
 
-                </div>
+                        switch ($link->link_name) {
+                            case 'GitHub':
+                                $label = 'View on GitHub';
+                                $icon = 'fab fa-github';
+                                break;
+
+                            case 'Domen':
+                                $label = 'View on Domen';
+                                $icon = 'fas fa-link';
+                                break;
+                        }
+                    @endphp
+
+                    @if ($label)
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <a href="{{ $link->project_links }}" target="_blank" rel="noopener noreferrer"
+                                class="btn btn-gradient">
+                                <i class="{{ $icon }} me-2"></i> {{ $label }}
+                            </a>
+                        </div>
+                    @endif
+                @endforeach
+
+
             </div>
 
             <footer class="py-4 text-gray-400 text-center">
-              Abdulrahman Hilal © 2025
+                Abdulrahman Hilal © 2025
             </footer>
         </div>
     </div>
