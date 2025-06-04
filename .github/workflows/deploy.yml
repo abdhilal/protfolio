@@ -1,3 +1,4 @@
+
 name: Deploy Laravel to InfinityFree via FTP
 
 on:
@@ -8,20 +9,20 @@ on:
 jobs:
   ftp-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout source code
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ${{ secrets.FTP_HOST }}
+          server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./             # جذر مشروعك
-          server-dir: /htdocs/      # مجلد المشروع على الاستضافة
+          local-dir: ./                     # المجلد الذي يحتوي على الملفات
+          server-dir: /htdocs/              # مسار المجلد على الاستضافة
           exclude: |
             .env
-            public/.htaccess
-          dangerous-clean-slate: false  # مهم جداً لمنع حذف الملفات الموجودة مسبقًا
+            node_modules/
+            vendor/
+            .git/
