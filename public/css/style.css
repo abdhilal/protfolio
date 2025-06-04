@@ -1,0 +1,645 @@
+:root {
+  /* Colors from original Tailwind config */
+  --bg-gray-900: #111827;
+  --text-gray-100: #F3F4F6;
+  --text-gray-300: #D1D5DB;
+  --text-gray-400: #9CA3AF;
+  --bg-gray-800-opacity-50: rgba(31, 41, 55, 0.5);
+  /* #1F2937 with 50% opacity */
+  --blue-400: #60A5FA;
+  --purple-600: #9333EA;
+  --blue-500: #3B82F6;
+  --blue-600: #2563EB;
+  --purple-700: #7E22CE;
+  /* Added for button hover */
+  --red-500: #EF4444;
+  --purple-500: #A855F7;
+  --green-400: #4ADE80;
+  /* For education internship title */
+
+  /* Specific skill colors from original Skills.jsx */
+  --php-color: #9333EA;
+  /* purple-600 */
+  --laravel-color: #DC2626;
+  /* red-600 */
+  --javascript-color: #FACC15;
+  /* yellow-400 */
+  --html-css-color: #60A5FA;
+  /* blue-400 */
+  --mysql-color: #F97316;
+  /* orange-500 */
+  --git-color: #F97316;
+  /* orange-500 */
+  --github-color: #FFFFFF;
+  /* white */
+  --vscode-color: #3B82F6;
+  /* blue-500 */
+  --postman-color: #FB923C;
+  /* orange-400 */
+  --composer-color: #2563EB;
+  /* blue-600 */
+  --restful-api-color: #EF4444;
+  /* red-400 */
+  --mvc-color: #818CF8;
+  /* indigo-400 */
+  --swagger-color: #4ADE80;
+  /* green-400 */
+  --jwt-color: #FACC15;
+  /* yellow-400 */
+  --db-design-color: #16A34A;
+  /* green-600 */
+  --query-opt-color: #2563EB;
+  /* blue-600 */
+  --data-mgmt-color: #60A5FA;
+  /* blue-400 */
+  --auth-color: #9333EA;
+  /* purple-600 */
+}
+
+body {
+  background-color: var(--bg-gray-900);
+  color: var(--text-gray-100);
+  font-family: 'Inter', sans-serif;
+  /* A common modern sans-serif font, or use system-ui */
+  background-image: url('../images/my/back.png'); /* تم تعديل المسار ليعمل من ملف style.css */
+  /* Replace with a real cool-background.png or Freepik image */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  position: relative;
+}
+
+/* Dark overlay for the background image, similar to bg-black bg-opacity-70 */
+.main-content-wrapper {
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  /* Ensure content is above overlay */
+  position: relative;
+}
+
+/* Container for main content, mimicking max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 */
+.custom-container {
+  max-width: 1280px;
+  /* Equivalent to max-w-7xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  /* px-4 */
+  padding-right: 1rem;
+  /* px-4 */
+}
+
+@media (min-width: 576px) {
+
+  /* sm breakpoint */
+  .custom-container {
+    padding-left: 1.5rem;
+    /* sm:px-6 */
+    padding-right: 1.5rem;
+    /* sm:px-6 */
+  }
+}
+
+@media (min-width: 1024px) {
+
+  /* lg breakpoint */
+  .custom-container {
+    padding-left: 0.2rem;
+    /* lg:px-8 */
+    padding-right: 0.2rem;
+    /* lg:px-8 */
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(to right, var(--blue-400), var(--purple-600));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  /* Fallback for browsers not supporting background-clip */
+}
+
+.section-padding {
+  padding-top: 5rem;
+  /* py-20 */
+  padding-bottom: 5rem;
+  /* py-20 */
+}
+
+.card-glassmorphism {
+  background-color: var(--bg-gray-800-opacity-50);
+  backdrop-filter: blur(12px);
+  /* Equivalent to backdrop-filter backdrop-blur-lg */
+  border-radius: 0.5rem;
+  /* rounded-lg */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  /* shadow-lg */
+  transition: all 0.3s ease-in-out;
+  border: none;
+  /* Remove default Bootstrap border */
+}
+
+.card-glassmorphism:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  /* hover:shadow-xl */
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  /* p-2 */
+  border-radius: 0.5rem;
+  /* rounded-lg */
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  /* hover:shadow-lg */
+  background-color: var(--bg-gray-800-opacity-50);
+  backdrop-filter: blur(12px);
+}
+
+.btn-gradient {
+  background: linear-gradient(to right, var(--blue-500), var(--purple-600));
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  /* py-2 px-4 */
+  border-radius: 9999px;
+  /* rounded-full */
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  /* shadow-lg */
+  border: none;
+  text-decoration: none;
+  /* Ensure no underline for anchor buttons */
+  display: inline-block;
+  /* For proper sizing and transform */
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(to right, var(--blue-600), var(--purple-700));
+  /* Darker gradient on hover */
+  transform: scale(1.05);
+  color: white;
+  /* Ensure text remains white */
+}
+
+/* Custom text sizes based on Tailwind values */
+.text-5xl {
+  font-size: 3rem;
+  /* 48px */
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  /* 30px */
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  /* 24px */
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  /* 20px */
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  /* 14px */
+}
+
+.text-base {
+  font-size: 1rem;
+  /* 16px - Bootstrap default but good to define */
+}
+
+/* Custom spacing based on Tailwind values, overriding Bootstrap where necessary */
+.mb-1 {
+  margin-bottom: 0.25rem !important;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem !important;
+}
+
+.mb-4 {
+  margin-bottom: 1rem !important;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem !important;
+}
+
+.mb-12 {
+  margin-bottom: 3rem !important;
+}
+
+/* 48px */
+.py-12 {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+/* 48px */
+.py-6 {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+/* 24px */
+.p-6 {
+  padding: 1.5rem !important;
+}
+
+/* 24px */
+.p-4 {
+  padding: 1rem !important;
+}
+
+/* 16px */
+.py-8 {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+/* 32px */
+.px-4 {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+/* 16px */
+.space-x-4>*+* {
+  margin-left: 1rem !important;
+}
+
+/* For social icons */
+.space-y-6>*+* {
+  margin-top: 1.5rem !important;
+}
+
+/* For Hero section mobile */
+.space-y-8>*+* {
+  margin-top: 2rem !important;
+}
+
+/* For Education section cards */
+
+/* Responsive spacing for hero section based on original */
+@media (min-width: 768px) {
+
+  /* md breakpoint */
+  .md\:space-x-40>*+* {
+    margin-left: 10rem !important;
+  }
+
+  /* Custom large spacing */
+  .md\:space-y-0>*+* {
+    margin-top: 0 !important;
+  }
+
+  .md\:text-left {
+    text-align: left !important;
+  }
+
+  .md\:justify-start {
+    justify-content: flex-start !important;
+  }
+}
+
+/* Specific skill icon colors */
+.icon-php {
+  color: var(--php-color);
+}
+
+.icon-laravel {
+  color: var(--laravel-color);
+}
+
+.icon-javascript {
+  color: var(--javascript-color);
+}
+
+.icon-html-css {
+  color: var(--html-css-color);
+}
+
+.icon-mysql {
+  color: var(--mysql-color);
+}
+
+.icon-git {
+  color: var(--git-color);
+}
+
+.icon-github {
+  color: var(--github-color);
+}
+
+.icon-vscode {
+  color: var(--vscode-color);
+}
+
+.icon-postman {
+  color: var(--postman-color);
+}
+
+.icon-composer {
+  color: var(--composer-color);
+}
+
+.icon-restful {
+  color: var(--restful-api-color);
+}
+
+.icon-mvc {
+  color: var(--mvc-color);
+}
+
+.icon-swagger {
+  color: var(--swagger-color);
+}
+
+.icon-jwt {
+  color: var(--jwt-color);
+}
+
+.icon-db-design {
+  color: var(--db-design-color);
+}
+
+.icon-query-opt {
+  color: var(--query-opt-color);
+}
+
+.icon-data-mgmt {
+  color: var(--data-mgmt-color);
+}
+
+.icon-auth {
+  color: var(--auth-color);
+}
+
+/* Animations for sections (mimicking framer-motion) */
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fade-in-bottom {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fade-in-visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+/* Specific for skills with delay */
+.skill-item-animated {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.skill-item-animated.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Header specific styles for responsive menu */
+.header-nav-items {
+  list-style: none;
+  /* Remove default list style */
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+
+  /* md breakpoint */
+  .header-nav-items {
+    display: flex !important;
+    flex-direction: row !important;
+    margin-left: auto !important;
+    /* Push to right */
+  }
+
+  .navbar-toggler-custom {
+    display: none !important;
+  }
+
+  .header-nav-collapse {
+    position: static !important;
+    background-color: transparent !important;
+    z-index: auto !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+
+  /* below md breakpoint */
+  .header-nav-collapse {
+    position: absolute;
+    top: 4rem;
+    /* Approximate top-16 (64px). Adjust based on actual header height */
+    left: 0;
+    right: 0;
+    background-color: #1F2937;
+    /* bg-gray-800 */
+    z-index: 1000;
+    width: 100%;
+    padding: 1rem 0;
+    /* Add some padding for mobile menu items */
+    text-align: center;
+    border-radius: 0.5rem;
+    /* rounded-lg for mobile menu */
+    overflow: hidden;
+    /* Hide content when collapsed */
+  }
+
+  .header-nav-items .nav-link {
+    padding: 0.5rem 1rem;
+    /* py-2 px-4 for mobile links */
+  }
+}
+
+/* Project grid */
+.project-grid {
+  display: grid;
+  gap: 2rem;
+  /* gap-8 */
+}
+
+@media (min-width: 768px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* md:grid-cols-2 */
+  }
+}
+
+@media (min-width: 992px) {
+
+  /* lg breakpoint */
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* lg:grid-cols-2 */
+  }
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  gap: 2rem;
+  /* gap-8 */
+}
+
+@media (min-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(5, 1fr);
+    /* md:grid-cols-5 */
+  }
+}
+
+@media (max-width: 767.98px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-cols-2 for smaller screens */
+  }
+}
+
+.skill-icon-bg {
+  padding: 1rem;
+  font-size: 36px;
+  /* أو 64px */
+  /* p-4 */
+  border-radius: 9999px;
+  /* rounded-full */
+}
+
+.skill-name {
+  font-weight: 600;
+  /* font-semibold */
+  color: var(--blue-400);
+  text-align: center;
+}
+
+.tech-badge {
+  border: 1px solid var(--blue-400);
+  background-color: rgba(255, 255, 255, 0.1);
+  /* bg-opacity-80 on top of the card's transparency */
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  /* rounded-md */
+  font-size: 0.875rem;
+  /* text-sm */
+  display: inline-block;
+  /* For proper sizing */
+}
+
+.contact-form-input {
+  background-color: #1F2937;
+  /* bg-gray-700 */
+  border: 1px solid transparent;
+  /* To handle focus ring */
+  border-radius: 0.25rem;
+  /* rounded */
+  padding: 0.75rem;
+  /* p-3 */
+  color: var(--text-gray-100);
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+.contact-form-input:focus {
+  outline: none;
+  border-color: var(--blue-500);
+  box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.25);
+  /* focus:ring-2 focus:ring-blue-500 */
+}
+
+.error-message {
+  color: var(--red-500);
+  font-size: 0.875rem;
+  /* text-sm */
+  margin-top: 0.25rem;
+  /* mt-1 */
+}
+
+/* Adjustments for Bootstrap overrides */
+.text-gray-300 {
+  color: var(--text-gray-300) !important;
+}
+
+.text-gray-400 {
+  color: var(--text-gray-400) !important;
+}
+
+.text-blue-400 {
+  color: var(--blue-400) !important;
+}
+
+.text-green-400 {
+  color: var(--green-400) !important;
+}
+
+/* For education internship title */
+.text-red-500 {
+  color: var(--red-500) !important;
+}
+
+.bg-purple-500 {
+  background-color: var(--purple-500) !important;
+}
+
+.font-semibold {
+  font-weight: 600 !important;
+}
+
+.font-bold {
+  font-weight: 700 !important;
+}
+
+/* Nav link custom hover using CSS directly */
+.nav-link.custom-hover:hover {
+  color: var(--blue-400) !important;
+}
+
+.no-wrap-text {
+  white-space: nowrap;
+  font-size: 20px; /* هذه قد تحتاج إلى تعديل حسب تفضيلك لحجم الاسم في الهيدر */
+}
+
+/* NEW CSS for Project Detail Page */
+.project-detail-container {
+  max-width: 1200px; /* عرض أقصى لصفحة التفاصيل، أوسع من Custom-container الافتراضي */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem 1rem; /* حشو داخلي للكونتينر */
+}
+
+.project-image-gallery img {
+  border-radius: 0.5rem;
+  max-width: 100%;
+  height: auto;
+  display: block; /* لضمان أن كل صورة تبدأ في سطر جديد إذا لم تكن في تخطيط الشبكة */
+  margin-bottom: 1rem; /* مسافة بين الصور */
+}
+
+.back-button {
+  margin-top: 2rem;
+  display: inline-block;
+  /* لضمان تطبيق الأنماط بشكل صحيح على الزر */
+}
