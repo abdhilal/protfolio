@@ -13,6 +13,16 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <style>
         /* Form-specific styles - consider moving to style.css */
+        :root {
+            --text-gray-100: #F3F4F6;
+            --text-gray-300: #D1D5DB;
+            --text-gray-400: #9CA3AF;
+            --blue-500: #3B82F6;
+            --blue-600: #2563EB;
+            --red-500: #EF4444;
+            --green-400: #4CAF50; /* A common green for success messages */
+        }
+
         .form-container {
             max-width: 900px;
             margin: 5rem auto;
@@ -81,7 +91,18 @@
             margin-top: 1.5rem;
             width: auto;
             padding: 0.75rem 2rem;
+            background: linear-gradient(to right, #6EE7B7, #3B82F6);
+            color: white;
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
         }
+
+        .btn-submit:hover {
+            opacity: 0.9;
+        }
+
 
         .gradient-text {
             /* You might define this in style.css, but including here for completeness */
@@ -142,6 +163,13 @@
             margin-bottom: 1rem;
         }
 
+        #new-image-previews { /* Added ID for the new image previews */
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
         /* Error and success message styles */
         .error-message {
             color: var(--red-500);
@@ -175,9 +203,9 @@
             <form action="{{ route('project.images.update', $project->id) }}" method="POST"
                 enctype="multipart/form-data">
                 @csrf
-                @method('POST') {{-- سنستخدم POST هنا ونقوم بالتعامل مع حذف الصور الموجودة بشكل منفصل --}}
+                @method('POST') {{-- Using POST, handle image deletion separately in the backend --}}
 
-                {{-- عرض رسائل الأخطاء والنجاح --}}
+                {{-- Display error and success messages --}}
                 @if ($errors->any())
                     <div class="alert alert-danger mb-4">
                         <ul class="mb-0">
@@ -216,23 +244,21 @@
                 <hr class="border-secondary my-4">
 
                 <h3 class="text-white mb-3">إضافة صور جديدة</h3>
-                <div id="new-images-container">
-                    {{-- حقل إدخال الصورة الأول (يمكن أن يكون فارغاً إذا لم يتم إضافة صور جديدة) --}}
-                    <div class="mb-3 new-image-input-group">
-                        <label for="new_image_0" class="form-label">صورة جديدة #1</label>
-                        <input type="file" class="form-control" id="new_images" name="new_images[]" accept="image/*"
-                            multiple>
-                        @error('new_images.0')
-                            <div class="error-message">{{ $message }}</div>
-                        @enderror
-                    </div>
+                <div class="mb-3">
+                    <label for="new_images" class="form-label">اختر صورًا جديدة</label>
+                    <input type="file" class="form-control" id="new_images" name="new_images[]" accept="image/*"
+                        multiple>
+                    @error('new_images.*') {{-- Wildcard for array validation --}}
+                        <div class="error-message">{{ $message }}</div>
+                    @enderror
                 </div>
-
+                {{-- Container for new image previews --}}
+                <div id="new-image-previews" class="image-preview-container"></div>
 
 
                 <input type="hidden" name="removed_images" id="removed-images-input">
 
-                <button type="submit" class="btn btn-gradient btn-submit">تحديث الصور</button>
+                <button type="submit" class="btn btn-submit">تحديث الصور</button>
             </form>
         </div>
     </div>
@@ -241,68 +267,40 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
 
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const fileInput = document.getElementById('new_images');
-    const previewContainer = document.getElementById('new-images-container');
-
-    fileInput.addEventListener('change', function () {
-        previewContainer.innerHTML = ''; // Clear previews
-        for (let file of fileInput.files) {
-            if (file.type.startsWith('image/')) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    const imgWrapper = document.createElement('div');
-                    imgWrapper.classList.add('image-preview-wrapper');
-                    imgWrapper.innerHTML = `<img src="${e.target.result}" alt="New Image">`;
-                    previewContainer.appendChild(imgWrapper);
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-    });
-});
-</script>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const newImagesContainer = document.getElementById('new-images-container');
-            const addImageBtn = document.getElementById('add-image-btn');
+            const newFileInput = document.getElementById('new_images');
+            const newImagePreviewsContainer = document.getElementById('new-image-previews');
             const removedImagesInput = document.getElementById('removed-images-input');
-            const imagePreviewContainer = document.querySelector('.image-preview-container');
-
-            let newImageIndex = 1; // Start from 1 for new images
+            const existingImagePreviewContainer = document.querySelector('.image-preview-container');
 
             // Array to store IDs of images to be removed
             let removedImageIds = [];
 
-            // Function to add a new image input field
-            addImageBtn.addEventListener('click', function() {
-                const newDiv = document.createElement('div');
-                newDiv.classList.add('mb-3', 'new-image-input-group');
-                newDiv.innerHTML = `
-                    <label for="new_image_${newImageIndex}" class="form-label">صورة جديدة #${newImageIndex + 1}</label>
-                    <div class="d-flex align-items-center">
-                        <input type="file" class="form-control" id="new_image_${newImageIndex}" name="new_images[]" accept="image/*">
-                        <button type="button" class="btn remove-btn ms-2" title="إزالة هذا الحقل">
-                            <i class="fas fa-minus-circle"></i>
-                        </button>
-                    </div>
-                `;
-                newImagesContainer.appendChild(newDiv);
-                newImageIndex++;
-            });
+            // Event listener for showing previews of newly selected images
+          newFileInput.addEventListener('change', function() {
+    newImagePreviewsContainer.innerHTML = ''; // Clear previous previews
 
-            // Event delegation for removing newly added image input fields
-            newImagesContainer.addEventListener('click', function(e) {
-                if (e.target.closest('.remove-btn')) {
-                    e.target.closest('.new-image-input-group').remove();
-                }
-            });
+    if (this.files && this.files.length > 0) {
+        Array.from(this.files).forEach((file) => {
+            if (file.type.startsWith('image/')) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    const imgWrapper = document.createElement('div');
+                    imgWrapper.classList.add('image-preview-wrapper');
+                    imgWrapper.innerHTML = `<img src="${e.target.result}" alt="${file.name}">`;
+                    newImagePreviewsContainer.appendChild(imgWrapper);
+                };
+
+                reader.readAsDataURL(file);
+            }
+        });
+    }
+});
 
             // Event listener for removing existing images
-            imagePreviewContainer.addEventListener('click', function(e) {
+            existingImagePreviewContainer.addEventListener('click', function(e) {
                 const removeBtn = e.target.closest('.remove-existing-image');
                 if (removeBtn) {
                     const imageId = removeBtn.dataset.imageId;

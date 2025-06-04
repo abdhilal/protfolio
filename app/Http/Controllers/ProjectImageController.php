@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use Illuminate\Support\Str;
 use App\Models\ProjectImage;
 use Illuminate\Http\Request;
 use Intervention\Image\Laravel\Facades\Image;
@@ -15,7 +16,9 @@ class ProjectImageController extends Controller
 
     /**
      * Update the specified resource in storage.
-     */   public function update(Request $request, Project $project)
+     */
+
+    public function update(Request $request, Project $project)
     {
         $request->validate([
             'new_images.*' => 'nullable|image', // للصور الجديدة
@@ -31,8 +34,12 @@ class ProjectImageController extends Controller
 
                 if ($image && $image->project_id === $project->id) {
 
+                    $filePath = public_path($image->images_gallery); // <-- يجب أن تكون قبل if
+
+                    if (is_file($filePath) && file_exists($filePath)) {
+                        unlink($filePath); // نحذف فقط إذا الملف موجود فعلاً
+                    }
                     // حذف الملف من التخزين
-                    unlink(public_path($image->images_gallery));
                     // حذف السجل من قاعدة البيانات
                     $image->delete();
                 }
@@ -47,7 +54,7 @@ class ProjectImageController extends Controller
                 $imageCoverPath = null;
 
                 $image = $file;
-                $filename = time() . '.' . $image->getClientOriginalExtension();
+                $filename = Str::uuid() . '.' . $image->getClientOriginalExtension();
                 $directory = public_path('projects/covers'); // مجلد داخل public مباشرة
 
 
