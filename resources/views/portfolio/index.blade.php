@@ -310,7 +310,7 @@
 
                                     </div>
                                     <a href="{{ route('project.show', $project->id) }}" class="btn btn-gradient"
-                                        target="_blank" rel="noopener noreferrer">عرض التفاصيل</a>
+                                        rel="noopener noreferrer">Show Details</a>
                                 </div>
                             </div>
                         @endforeach
