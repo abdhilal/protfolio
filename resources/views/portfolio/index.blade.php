@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
+<link rel="icon" href="{{ asset('images/my/wallet.png') }}" >
 
     <link rel="stylesheet" href={{ asset('fontawesome/css/all.min.css') }}>
     <link rel="stylesheet" href={{ asset('css/style.css') }}>
@@ -270,171 +271,154 @@
                     </div>
                 </section>
 
+
+
+
+
+
+
+
+
                 <section id="projects" class="section-padding">
                     <h2 class="text-3xl font-bold gradient-text text-center mb-12 fade-in-left">Projects</h2>
                     <div class="project-grid mx-auto">
-                        <div class="card-glassmorphism p-4 project-item-animated">
-                            <iframe width="100%" height="320" src="https://www.youtube.com/embed/ulDugCU4L1M" "
-                title=" Enterprise Resource Planning (ERP) System" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen class="rounded-top">
-              </iframe>
-              <div class="p-4">
-                <h3 class="text-2xl font-semibold mb-2 text-blue-400">Enterprise Resource Planning (ERP) System</h3>
-                <p class="mb-4 text-gray-300">
-                  Developed a comprehensive ERP system to streamline and automate core business processes in various
-                  departments such as finance, human resources, supply chain and manufacturing.
-                </p>
-                <div class="d-flex flex-wrap gap-2 mb-4">
-                  <span class="tech-badge">Java</span>
-                  <span class="tech-badge">Spring Boot</span>
-                  <span class="tech-badge">React</span>
-                  <span class="tech-badge">PostgreSQL</span>
-                  <span class="tech-badge">RESTful APIs</span>
-                </div>
-                <a href="/projects/erp-system" class="btn btn-gradient" target="_blank" rel="noopener noreferrer">عرض
-                  التفاصيل</a>
-              </div>
-            </div>
-            <div class="card-glassmorphism p-4 project-item-animated">
-              <iframe width="100%" height="320" src="https://www.youtube.com/embed/ulDugCU4L1M" "
-                                title=" Enterprise Resource Planning (ERP) System" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen class="rounded-top">
-                            </iframe>
-                            <div class="p-4">
-                                <h3 class="text-2xl font-semibold mb-2 text-blue-400">Hospital Management System</h3>
-                                <p class="mb-4 text-gray-300">
-                                    Developed a Hospital Management System (HMS) to automate and streamline hospital
-                                    operations, including
-                                    patient management, appointment scheduling, billing, and inventory management.
-                                </p>
-                                <div class="d-flex flex-wrap gap-2 mb-4">
-                                    <span class="tech-badge">Java</span>
-                                    <span class="tech-badge">Spring Boot</span>
-                                    <span class="tech-badge">React</span>
-                                    <span class="tech-badge">PostgreSQL</span>
-                                    <span class="tech-badge">RESTful APIs</span>
+
+                        @foreach ($projects as $project)
+                            <div class="card-glassmorphism p-4 project-item-animated">
+                                @if ($project->image_cover)
+                                    <img src="{{ asset($project->image_cover) }}" alt="{{ $project->title }}"
+                                        class="w-100 h-64 object-cover rounded-top mb-4">
+                                @else
+                                    <iframe width="100%" height="320" src="{{ $project->link_video }}"
+                                        title=" Enterprise Resource Planning (ERP) System" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen class="rounded-top">
+                                    </iframe>
+                                @endif
+
+
+                                <div class="p-4">
+                                    <h3 class="text-2xl font-semibold mb-2 text-blue-400">{{ $project->title }}</h3>
+                                    </h3>
+                                    <p class="mb-4 text-gray-300">
+                                        {{ $project->overview }}
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-2 mb-4">
+                                        @foreach ($project->technologies as $technolog)
+                                            <span class="tech-badge">{{ $technolog->technologies }}</span>
+                                        @endforeach
+
+                                    </div>
+                                    <a href="{{ route('project.show', $project->id) }}" class="btn btn-gradient"
+                                        target="_blank" rel="noopener noreferrer">عرض التفاصيل</a>
                                 </div>
-                                <a href="/projects/hospital-system" class="btn btn-gradient" target="_blank"
-                                    rel="noopener noreferrer">عرض التفاصيل</a>
                             </div>
+                        @endforeach
+
+
+                    </div>
+                </section>
+
+
+
+
+
+
+
+
+
+
+
+                <section id="contact" class="section-padding">
+                    <h2 class="text-3xl font-bold gradient-text text-center mb-12 fade-in-left">Contact Me</h2>
+                    <div class="card-glassmorphism p-6 mx-auto fade-in-bottom contact-container">
+                        <p class="text-xl text-gray-300 mb-6 text-center">You can reach out to me through the following
+                            platforms:</p>
+                        <div class="d-flex justify-content-center flex-wrap gap-4"> <a
+                                href="mailto:abdrahmanmhran3@gmail.com" target="_blank" rel="noopener noreferrer"
+                                class="text-gray-300 custom-hover d-flex flex-column align-items-center text-decoration-none p-3">
+                                <i class="fas fa-envelope fa-3x mb-2"></i>
+                                <span class="text-sm">Email</span>
+                            </a>
+                            <a href="https://wa.me/+905010588210" target="_blank" rel="noopener noreferrer"
+                                class="text-gray-300 custom-hover d-flex flex-column align-items-center text-decoration-none p-3">
+                                <i class="fab fa-whatsapp fa-3x mb-2"></i>
+                                <span class="text-sm">WhatsApp</span>
+                            </a>
+                            <a href="http://www.linkedin.com/in/abdrhilal" target="_blank" rel="noopener noreferrer"
+                                class="text-gray-300 custom-hover d-flex flex-column align-items-center text-decoration-none p-3">
+                                <i class="fab fa-linkedin fa-3x mb-2"></i>
+                                <span class="text-sm">LinkedIn</span>
+                            </a>
+                            <a href="https://github.com/abdhilal" target="_blank" rel="noopener noreferrer"
+                                class="text-gray-300 custom-hover d-flex flex-column align-items-center text-decoration-none p-3">
+                                <i class="fab fa-github fa-3x mb-2"></i>
+                                <span class="text-sm">GitHub</span>
+                            </a>
                         </div>
-                        <div class="card-glassmorphism p-4 project-item-animated">
-                            <iframe width="100%" height="320" src="https://www.youtube.com/embed/ulDugCU4L1M" "
-                title=" Enterprise Resource Planning (ERP) System" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen class="rounded-top">
-              </iframe>
-              <div class="p-4">
-                <h3 class="text-2xl font-semibold mb-2 text-blue-400">Hospital Management System</h3>
-                <p class="mb-4 text-gray-300">
-                  Developed a Hospital Management System (HMS) to automate and streamline hospital operations, including
-                  patient management, appointment scheduling, billing, and inventory management.
-                </p>
-                <div class="d-flex flex-wrap gap-2 mb-4">
-                  <span class="tech-badge">Java</span>
-                  <span class="tech-badge">Spring Boot</span>
-                  <span class="tech-badge">React</span>
-                  <span class="tech-badge">PostgreSQL</span>
-                  <span class="tech-badge">RESTful APIs</span>
-                </div>
-                <a href="/projects/hospital-system" class="btn btn-gradient" target="_blank"
-                  rel="noopener noreferrer">عرض التفاصيل</a>
-              </div>
-            </div>
-          </div>
-        </section>
+                    </div>
+                </section>
+            </main>
 
-
-
-   <section id="contact" class="section-padding">
-  <h2 class="text-3xl font-bold gradient-text text-center mb-12 fade-in-left">Contact Me</h2>
-  <div class="card-glassmorphism p-6 mx-auto fade-in-bottom contact-container">
-    <p class="text-xl text-gray-300 mb-6 text-center">You can reach out to me through the following platforms:</p>
-    <div class="d-flex justify-content-center flex-wrap gap-4"> <a href="mailto:abdrahmanmhran3@gmail.com" target="_blank" rel="noopener noreferrer"
-        class="text-gray-300 custom-hover d-flex flex-column align-items-center text-decoration-none p-3"> <i class="fas fa-envelope fa-3x mb-2"></i>
-        <span class="text-sm">Email</span>
-      </a>
-      <a href="https://wa.me/+905010588210" target="_blank" rel="noopener noreferrer"
-        class="text-gray-300 custom-hover d-flex flex-column align-items-center text-decoration-none p-3">
-        <i class="fab fa-whatsapp fa-3x mb-2"></i>
-        <span class="text-sm">WhatsApp</span>
-      </a>
-      <a href="http://www.linkedin.com/in/abdrhilal" target="_blank" rel="noopener noreferrer"
-        class="text-gray-300 custom-hover d-flex flex-column align-items-center text-decoration-none p-3">
-        <i class="fab fa-linkedin fa-3x mb-2"></i>
-        <span class="text-sm">LinkedIn</span>
-      </a>
-      <a href="https://github.com/abdhilal" target="_blank" rel="noopener noreferrer"
-        class="text-gray-300 custom-hover d-flex flex-column align-items-center text-decoration-none p-3">
-        <i class="fab fa-github fa-3x mb-2"></i>
-        <span class="text-sm">GitHub</span>
-      </a>
+            <footer class="py-8 text-gray-400 text-center d-flex align-items-center justify-content-center">
+                Abdulrahman Hilal © 2025
+            </footer>
+        </div>
     </div>
-  </div>
-</section>
-      </main>
 
-      <footer class="py-8 text-gray-400 text-center d-flex align-items-center justify-content-center">
-Abdulrahman Hilal © 2025
-      </footer>
-    </div>
-  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Intersection Observer for scroll animations
+            const sections = document.querySelectorAll(
+                '.fade-in-left, .fade-in-bottom, .project-item-animated, .skill-item-animated');
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-  </script>
-  <script>
-      document.addEventListener('DOMContentLoaded', () => {
-          // Intersection Observer for scroll animations
-          const sections = document.querySelectorAll(
-              '.fade-in-left, .fade-in-bottom, .project-item-animated, .skill-item-animated');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.classList.contains('skill-item-animated')) {
+                            const index = Array.from(entry.target.parentNode.children).indexOf(entry
+                                .target);
+                            setTimeout(() => {
+                                entry.target.classList.add('visible');
+                            }, index * 100);
+                        } else {
+                            entry.target.classList.add('fade-in-visible');
+                        }
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
 
-          const observer = new IntersectionObserver((entries) => {
-              entries.forEach(entry => {
-                  if (entry.isIntersecting) {
-                      if (entry.target.classList.contains('skill-item-animated')) {
-                          const index = Array.from(entry.target.parentNode.children).indexOf(entry
-                              .target);
-                          setTimeout(() => {
-                              entry.target.classList.add('visible');
-                          }, index * 100);
-                      } else {
-                          entry.target.classList.add('fade-in-visible');
-                      }
-                      observer.unobserve(entry.target);
-                  }
-              });
-          }, {
-              threshold: 0.1
-          });
-
-          sections.forEach(section => {
-              observer.observe(section);
-          });
+            sections.forEach(section => {
+                observer.observe(section);
+            });
 
 
 
 
 
-          // Handle mobile navigation collapse after clicking a link
-          const navLinks = document.querySelectorAll('.header-nav-items .nav-link');
-          const navbarCollapse = document.getElementById('navbarNav');
-          const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-              toggle: false
-          });
+            // Handle mobile navigation collapse after clicking a link
+            const navLinks = document.querySelectorAll('.header-nav-items .nav-link');
+            const navbarCollapse = document.getElementById('navbarNav');
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                toggle: false
+            });
 
-          navLinks.forEach(link => {
-              link.addEventListener('click', () => {
-                  if (navbarCollapse.classList.contains('show')) {
-                      bsCollapse.hide();
-                  }
-              });
-          });
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navbarCollapse.classList.contains('show')) {
+                        bsCollapse.hide();
+                    }
+                });
+            });
 
-      });
-  </script>
+        });
+    </script>
 </body>
 
 </html>

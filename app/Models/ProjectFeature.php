@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo; // Add this line
 
 class ProjectFeature extends Model // Corrected class name
 {
-    protected $table = 'projec_features'; // Keep original table name if migration name is fixed
+    protected $table = 'project_features'; // Keep original table name if migration name is fixed
                                          // Or rename migration file and re-migrate to 'project_features'
     protected $fillable = [
         'project_id',

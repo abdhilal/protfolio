@@ -2,64 +2,36 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
 use App\Models\ProjectLink;
 use Illuminate\Http\Request;
 
 class ProjectLinkController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function update(Request $request, Project $project)
     {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        $request->validate([
+            'links' => 'required|array|min:1',
+            'links.*.name' => 'nullable|string|max:255', // اسم الرابط يمكن أن يكون فارغاً إذا لم يحدد
+            'links.*.url' => 'nullable|url|max:2048', // عنوان URL يمكن أن يكون فارغاً
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(ProjectLink $projectLink)
-    {
-        //
-    }
+        // حذف الروابط الموجودة لهذا المشروع
+        $project->links()->delete();
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(ProjectLink $projectLink)
-    {
-        //
-    }
+        // إنشاء روابط جديدة بناءً على المصفوفة المرسلة
+        foreach ($request->links as $linkData) {
+            if (!empty($linkData['name']) && !empty($linkData['url'])) { // حفظ فقط إذا كان كلا الحقلين غير فارغين
+                $project->links()->create([
+                    'link_name' => $linkData['name'],
+                    'project_links' => $linkData['url'],
+                ]);
+            }
+        }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, ProjectLink $projectLink)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(ProjectLink $projectLink)
-    {
-        //
+        return redirect()->route('project.edit', $project->id)
+                         ->with('success', 'تم تحديث روابط المشروع بنجاح!');
     }
 }

@@ -2,64 +2,33 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ProjectTechnology;
+use App\Models\Project;
 use Illuminate\Http\Request;
+use App\Models\ProjectTechnology;
 
 class ProjectTechnologyController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function update(Request $request, Project $project)
     {
-        //
-    }
+        $request->validate([
+            'technologies' => 'required|array|min:1',
+            'technologies.*' => 'nullable|string|max:255', // technologies.* validates each item in the array
+        ]);
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        // Delete existing technologies for this project
+        $project->technologies()->delete();
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(ProjectTechnology $projectTechnology)
-    {
-        //
-    }
+        // Create new technologies based on the submitted array
+        foreach ($request->technologies as $techName) {
+            if ($techName) { // Only save if the input is not empty
+                $project->technologies()->create([
+                    'technologies' => $techName, // The column name is 'technologies'
+                ]);
+            }
+        }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(ProjectTechnology $projectTechnology)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, ProjectTechnology $projectTechnology)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(ProjectTechnology $projectTechnology)
-    {
-        //
+        return redirect()->route('project.edit', $project->id)
+                         ->with('success', 'Project technologies updated successfully!');
     }
 }
