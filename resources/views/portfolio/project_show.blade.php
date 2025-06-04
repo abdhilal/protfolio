@@ -53,6 +53,10 @@
                 <p class="text-lg text-gray-300 mb-4">
                     {{ $project->problem_solved }}
                 </p>
+                <h3 class="text-xl font-bold text-blue-400 mb-3">description</h3>
+                <p class="text-lg text-gray-300 mb-4">
+                    {{ $project->description }}
+                </p>
 
                 <h3 class="text-xl font-bold text-blue-400 mb-3">My Role</h3>
                 <p class="text-lg text-gray-300 mb-4">
