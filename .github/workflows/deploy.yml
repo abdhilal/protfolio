@@ -28,4 +28,4 @@ jobs:
             **/tests/**
             **/.github/**
             **/public/fontawesome/**
-            dangerous-clean-slate: false
+          dangerous-clean-slate: false
