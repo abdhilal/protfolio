@@ -60,7 +60,7 @@
 
                 <h3 class="text-xl font-bold text-blue-400 mb-3">My Role</h3>
                 <p class="text-lg text-gray-300 mb-4">
-                    {{ $project->my_role }}
+                    {{ $project->my_Role }}
 
                 <h3 class="text-xl font-bold text-blue-400 mb-3">Visuals & Demo</h3>
                 @if ($project->link_video)
