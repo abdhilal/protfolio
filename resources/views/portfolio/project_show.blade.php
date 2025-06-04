@@ -41,7 +41,7 @@
                 <ul class="text-gray-300 mb-4">
 
                     @foreach ($project->features as $feature)
-                        <li class="mb-2"><i class="fas fa-check-circle me-2 text-green-400"></i> Integrated Financial
+                        <li class="mb-2"><i class="fas fa-check-circle me-2 text-green-400"></i> 
                             {{ $feature->key_features }}</li>
                     @endforeach
 
