@@ -17,7 +17,8 @@
             max-width: 900px;
             margin: 5rem auto;
             padding: 2.5rem;
-            background-color: #1F2937; /* Example background */
+            background-color: #1F2937;
+            /* Example background */
             border-radius: 0.5rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             color: var(--text-gray-100);
@@ -29,7 +30,8 @@
         }
 
         .form-control {
-            background-color: #374151; /* Darker input background */
+            background-color: #374151;
+            /* Darker input background */
             border: 1px solid transparent;
             border-radius: 0.25rem;
             padding: 0.75rem;
@@ -170,7 +172,8 @@
         <div class="form-container">
             <h1 class="gradient-text text-center mb-5">تعديل صور المشروع لـ: {{ $project->title }}</h1>
 
-            <form action="{{ route('project.images.update', $project->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('project.images.update', $project->id) }}" method="POST"
+                enctype="multipart/form-data">
                 @csrf
                 @method('POST') {{-- سنستخدم POST هنا ونقوم بالتعامل مع حذف الصور الموجودة بشكل منفصل --}}
 
@@ -199,8 +202,9 @@
                 <div class="image-preview-container">
                     @forelse($project->images as $image)
                         <div class="image-preview-wrapper" id="existing-image-{{ $image->id }}">
-                            <img src="{{ asset( $image->images_gallery) }}" alt="Project Image">
-                            <button type="button" class="remove-existing-image" data-image-id="{{ $image->id }}" title="إزالة هذه الصورة">
+                            <img src="{{ asset($image->images_gallery) }}" alt="Project Image">
+                            <button type="button" class="remove-existing-image" data-image-id="{{ $image->id }}"
+                                title="إزالة هذه الصورة">
                                 <i class="fas fa-times"></i>
                             </button>
                         </div>
@@ -216,16 +220,15 @@
                     {{-- حقل إدخال الصورة الأول (يمكن أن يكون فارغاً إذا لم يتم إضافة صور جديدة) --}}
                     <div class="mb-3 new-image-input-group">
                         <label for="new_image_0" class="form-label">صورة جديدة #1</label>
-                        <input type="file" class="form-control" id="new_image_0" name="new_images[]" accept="image/*">
+                        <input type="file" class="form-control" id="new_images" name="new_images[]" accept="image/*"
+                            multiple>
                         @error('new_images.0')
                             <div class="error-message">{{ $message }}</div>
                         @enderror
                     </div>
                 </div>
 
-                <button type="button" id="add-image-btn" class="btn add-more-btn mb-4">
-                    <i class="fas fa-plus"></i> إضافة حقل صورة آخر
-                </button>
+
 
                 <input type="hidden" name="removed_images" id="removed-images-input">
 
@@ -237,6 +240,31 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const fileInput = document.getElementById('new_images');
+    const previewContainer = document.getElementById('new-images-container');
+
+    fileInput.addEventListener('change', function () {
+        previewContainer.innerHTML = ''; // Clear previews
+        for (let file of fileInput.files) {
+            if (file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const imgWrapper = document.createElement('div');
+                    imgWrapper.classList.add('image-preview-wrapper');
+                    imgWrapper.innerHTML = `<img src="${e.target.result}" alt="New Image">`;
+                    previewContainer.appendChild(imgWrapper);
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    });
+});
+</script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const newImagesContainer = document.getElementById('new-images-container');
