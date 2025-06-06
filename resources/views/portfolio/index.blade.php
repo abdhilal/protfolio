@@ -62,31 +62,33 @@
             </header>
 
             <main class="py-8">
-                <section id="hero"
-                    class="py-12 d-flex flex-column flex-md-row align-items-center text-center md:text-left justify-content-center md:space-x-40 space-y-6 md:space-y-0">
-                    <div class="hero-content-left fade-in-left">
-                        <h1 class="text-5xl font-bold gradient-text mb-2">Abdulrahman Hilal</h1>
-                        <p class="text-xl text-gray-300 mb-4">Backend Developer</p>
-                        <div class="d-flex justify-content-center md:justify-start space-x-4">
-                            <a href="mailto:abdrahmanmhran3@gmail.com" target="_blank" rel="noopener noreferrer"
-                                class="text-gray-300 custom-hover"><i class="fas fa-envelope fa-2x"></i></a>
-                            <a href="https://wa.me/+905010588210" target="_blank" rel="noopener noreferrer"
-                                class="text-gray-300 custom-hover"><i class="fab fa-whatsapp fa-2x"></i></a>
-                            <a href="http://www.linkedin.com/in/abdrhilal" target="_blank" rel="noopener noreferrer"
-                                class="text-gray-300 custom-hover"><i class="fab fa-linkedin fa-2x"></i></a>
-                            <a href="https://github.com/abdhilal" target="_blank" rel="noopener noreferrer"
-                                class="text-gray-300 custom-hover"><i class="fab fa-github fa-2x"></i></a>
-                        </div>
-                    </div>
-                    <div class="mt-4 mt-md-0">
-                        <div class="rounded-circle border border-4"
-                            style="border-color: var(--blue-400) !important; width: 256px; height: 256px; overflow: hidden;">
-                            <img src="{{ asset('images/my/potoMy.jpg') }}" alt="Abdulrahman Hilal" class="w-100 h-100"
-                                style="object-fit: cover;">
-                        </div>
-                    </div>
-                </section>
-
+               <section id="hero"
+    class="py-12 d-flex flex-column flex-md-row align-items-center text-center md:text-left justify-content-center md:space-x-40 space-y-6 md:space-y-0">
+    <div class="hero-content-left fade-in-left">
+        <h1 class="text-5xl font-bold gradient-text mb-2">Abdulrahman Hilal</h1>
+        <p class="text-xl text-gray-300 mb-4">Backend Developer</p>
+        <div class="d-flex justify-content-center md:justify-start space-x-4 mb-4">
+            <a href="mailto:abdrahmanmhran3@gmail.com" target="_blank" rel="noopener noreferrer"
+                class="text-gray-300 custom-hover"><i class="fas fa-envelope fa-2x"></i></a>
+            <a href="https://wa.me/+905010588210" target="_blank" rel="noopener noreferrer"
+                class="text-gray-300 custom-hover"><i class="fab fa-whatsapp fa-2x"></i></a>
+            <a href="http://www.linkedin.com/in/abdrhilal" target="_blank" rel="noopener noreferrer"
+                class="text-gray-300 custom-hover"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://github.com/abdhilal" target="_blank" rel="noopener noreferrer"
+                class="text-gray-300 custom-hover"><i class="fab fa-github fa-2x"></i></a>
+        </div>
+        <a href="path/to/your/cv.pdf" download class="btn btn-gradient mt-3">
+            <i class="fas fa-download me-2"></i> Download CV
+        </a>
+    </div>
+    <div class="mt-4 mt-md-0">
+        <div class="rounded-circle border border-4"
+            style="border-color: var(--blue-400) !important; width: 256px; height: 256px; overflow: hidden;">
+            <img src="{{ asset('images/my/potoMy.jpg') }}" alt="Abdulrahman Hilal" class="w-100 h-100"
+                style="object-fit: cover;">
+        </div>
+    </div>
+</section>
                 <section id="about" class="section-padding">
                     <h2 class="text-3xl font-bold gradient-text text-center mb-12 fade-in-left">About Me</h2>
                     <div class="card-glassmorphism p-6 mx-auto">
