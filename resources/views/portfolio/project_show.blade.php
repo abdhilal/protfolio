@@ -26,7 +26,7 @@
             <div class="card-glassmorphism p-5 mb-5">
                 <h2 class="text-2xl font-bold text-blue-400 mb-3">Overview</h2>
                 <p class="text-lg text-gray-300 mb-4">
-                    {{ $project->overview }}
+                    {!! nl2br(e($project->overview)) !!}
                 </p>
 
                 <h3 class="text-xl font-bold text-blue-400 mb-3">Technologies Used</h3>
@@ -43,7 +43,7 @@
 
                     @foreach ($project->features as $feature)
                         <li class="mb-2"><i class="fas fa-check-circle me-2 text-green-400"></i>
-                            {{ $feature->key_features }}</li>
+                            {!! nl2br(e($feature->key_features)) !!}</li>
                     @endforeach
 
 
@@ -52,7 +52,7 @@
 
                 <h3 class="text-xl font-bold text-blue-400 mb-3">Problem Solved</h3>
                 <p class="text-lg text-gray-300 mb-4">
-                    {{ $project->problem_solved }}
+                    {!! nl2br(e($project->problem_solved)) !!}
                 </p>
                 <h3 class="text-xl font-bold text-blue-400 mb-3">description</h3>
                 <p class="text-lg text-gray-300 mb-4">
@@ -61,7 +61,8 @@
 
                 <h3 class="text-xl font-bold text-blue-400 mb-3">My Role</h3>
                 <p class="text-lg text-gray-300 mb-4">
-                    {{ $project->my_Role }}
+                    {!! nl2br(e($project->my_Role)) !!}
+
 
                 <h3 class="text-xl font-bold text-blue-400 mb-3">Visuals & Demo</h3>
                 @if ($project->link_video)
