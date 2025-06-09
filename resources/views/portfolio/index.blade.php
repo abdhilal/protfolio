@@ -90,42 +90,41 @@
                         </div>
                     </div>
                 </section>
-                <section id="about" class="section-padding">
-                    <h2 class="text-3xl font-bold gradient-text text-center mb-12 fade-in-left">About Me</h2>
-                    <div class="card-glassmorphism p-6 mx-auto">
-                        <p class="text-sm text-gray-300 mb-4">
-                            Hello! I'm <span class="text-blue-400 font-semibold">Abdulrahman Hilal</span>, a backend
-                            developer
-                            specializing in Laravel, PHP, and MySQL.
-                            I am currently studying at the Technical Institute of Computer Science and living in Azaz,
-                            Aleppo.
-                        </p>
-                        <p class="text-sm text-gray-300 mb-4">
-                            I have expertise in developing robust systems using Laravel, with a strong focus on high
-                            performance,
-                            security, and an excellent user experience. I also utilize HTML, CSS, and JavaScript when
-                            needed to build
-                            complete interfaces.
-                        </p>
-                        <p class="text-sm text-gray-300 mb-4">
-                            I have developed several projects and am always eager to continue learning and improving my
-                            skills
-                            to deliver innovative software solutions.
-                        </p>
-                        <p class="text-sm text-gray-300 mb-4">
-                            My passion for development and commitment to deadlines ensure that I deliver high-quality
-                            work with
-                            optimal performance.
-                            I strive for excellence in everything I learn, focusing on building flexible and secure
-                            applications.
-                        </p>
-                        <p class="text-sm text-gray-300 mb-0">
-                            My goal is to achieve professionalism in web development, expand my knowledge of modern
-                            technologies,
-                            and work on projects that bring real value to users.
-                        </p>
-                    </div>
-                </section>
+               <section id="about" class="section-padding">
+    <h2 class="text-3xl font-bold gradient-text text-center mb-12 fade-in-left">About Me</h2>
+    <div class="card-glassmorphism p-6 mx-auto">
+        <p class="text-sm text-gray-300 mb-4">
+            Hello! I'm <span class="text-blue-400 font-semibold">Abdulrahman Hilal</span>, a backend
+            developer specializing in <strong>Laravel</strong>, <strong>PHP</strong>, and <strong>MySQL</strong>. I am currently studying at
+            the Technical Institute of Computer Science and living in Azaz,
+            Aleppo.
+        </p>
+        <p class="text-sm text-gray-300 mb-4">
+            I have expertise in developing robust systems using Laravel, with a strong focus on high
+            performance, security, and an excellent user experience. I also utilize <strong>HTML, CSS, and
+            JavaScript</strong> when
+            needed to build complete interfaces.
+        </p>
+        <p class="text-sm text-gray-300 mb-4">
+            I have developed several projects and am always eager to continue learning and improving my
+            skills to deliver innovative software solutions. <strong>Recently, I've been actively expanding my
+            expertise into Artificial Intelligence (AI) and Machine Learning (ML), particularly in
+            Natural Language Processing (NLP) with Python libraries like scikit-learn and Hugging Face
+            Transformers.</strong>
+        </p>
+        <p class="text-sm text-gray-300 mb-4">
+            My passion for development and commitment to deadlines ensure that I deliver high-quality
+            work with optimal performance. I strive for excellence in everything I learn, focusing on
+            building flexible and secure
+            applications.
+        </p>
+        <p class="text-sm text-gray-300 mb-0">
+            My goal is to achieve professionalism in web development, <strong>integrate modern AI capabilities
+            into my solutions</strong>, and work on projects that bring real value to users.
+        </p>
+    </div>
+</section>
+
 
                 <section id="skills" class="section-padding">
                     <h2 class="text-3xl font-bold gradient-text text-center mb-12 fade-in-left">Skills</h2>
