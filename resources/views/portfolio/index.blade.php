@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en"> <head>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdulrahman Hilal - Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-<link rel="icon" href="{{ asset('images/my/wallet.png') }}" >
+    <link rel="icon" href="{{ asset('images/my/wallet.png') }}">
 
     <link rel="stylesheet" href={{ asset('fontawesome/css/all.min.css') }}>
     <link rel="stylesheet" href={{ asset('css/style.css') }}>
@@ -60,33 +62,34 @@
             </header>
 
             <main class="py-8">
-               <section id="hero"
-    class="py-12 d-flex flex-column flex-md-row align-items-center text-center md:text-left justify-content-center md:space-x-40 space-y-6 md:space-y-0">
-    <div class="hero-content-left fade-in-left">
-        <h1 class="text-5xl font-bold gradient-text mb-2">Abdulrahman Hilal</h1>
-        <p class="text-xl text-gray-300 mb-4">Backend Developer</p>
-        <div class="d-flex justify-content-center md:justify-start space-x-4 mb-4">
-            <a href="mailto:abdrahmanmhran3@gmail.com" target="_blank" rel="noopener noreferrer"
-                class="text-gray-300 custom-hover"><i class="fas fa-envelope fa-2x"></i></a>
-            <a href="https://wa.me/+905010588210" target="_blank" rel="noopener noreferrer"
-                class="text-gray-300 custom-hover"><i class="fab fa-whatsapp fa-2x"></i></a>
-            <a href="http://www.linkedin.com/in/abdrhilal" target="_blank" rel="noopener noreferrer"
-                class="text-gray-300 custom-hover"><i class="fab fa-linkedin fa-2x"></i></a>
-            <a href="https://github.com/abdhilal" target="_blank" rel="noopener noreferrer"
-                class="text-gray-300 custom-hover"><i class="fab fa-github fa-2x"></i></a>
-        </div>
-        <button type="button" class="btn btn-gradient mt-3" data-bs-toggle="modal" data-bs-target="#cvDownloadModal">
-            <i class="fas fa-download me-2"></i> Download CV
-        </button>
-    </div>
-    <div class="mt-4 mt-md-0">
-        <div class="rounded-circle border border-4"
-            style="border-color: var(--blue-400) !important; width: 256px; height: 256px; overflow: hidden;">
-            <img src="{{ asset('images/my/potoMy.jpg') }}" alt="Abdulrahman Hilal" class="w-100 h-100"
-                style="object-fit: cover;">
-        </div>
-    </div>
-</section>
+                <section id="hero"
+                    class="py-12 d-flex flex-column flex-md-row align-items-center text-center md:text-left justify-content-center md:space-x-40 space-y-6 md:space-y-0">
+                    <div class="hero-content-left fade-in-left">
+                        <h1 class="text-5xl font-bold gradient-text mb-2">Abdulrahman Hilal</h1>
+                        <p class="text-xl text-gray-300 mb-4">Backend Developer</p>
+                        <div class="d-flex justify-content-center md:justify-start space-x-4 mb-4">
+                            <a href="mailto:abdrahmanmhran3@gmail.com" target="_blank" rel="noopener noreferrer"
+                                class="text-gray-300 custom-hover"><i class="fas fa-envelope fa-2x"></i></a>
+                            <a href="https://wa.me/+905010588210" target="_blank" rel="noopener noreferrer"
+                                class="text-gray-300 custom-hover"><i class="fab fa-whatsapp fa-2x"></i></a>
+                            <a href="http://www.linkedin.com/in/abdrhilal" target="_blank" rel="noopener noreferrer"
+                                class="text-gray-300 custom-hover"><i class="fab fa-linkedin fa-2x"></i></a>
+                            <a href="https://github.com/abdhilal" target="_blank" rel="noopener noreferrer"
+                                class="text-gray-300 custom-hover"><i class="fab fa-github fa-2x"></i></a>
+                        </div>
+                        <button type="button" class="btn btn-gradient mt-3" data-bs-toggle="modal"
+                            data-bs-target="#cvDownloadModal">
+                            <i class="fas fa-download me-2"></i> Download CV
+                        </button>
+                    </div>
+                    <div class="mt-4 mt-md-0">
+                        <div class="rounded-circle border border-4"
+                            style="border-color: var(--blue-400) !important; width: 256px; height: 256px; overflow: hidden;">
+                            <img src="{{ asset('images/my/potoMy.jpg') }}" alt="Abdulrahman Hilal" class="w-100 h-100"
+                                style="object-fit: cover;">
+                        </div>
+                    </div>
+                </section>
                 <section id="about" class="section-padding">
                     <h2 class="text-3xl font-bold gradient-text text-center mb-12 fade-in-left">About Me</h2>
                     <div class="card-glassmorphism p-6 mx-auto">
@@ -348,36 +351,77 @@
         </div>
     </div>
 
-    <div class="modal fade" id="cvDownloadModal" tabindex="-1" aria-labelledby="cvDownloadModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content card-glassmorphism">
-                <div class="modal-header border-0 pb-0">
-                    <h5 class="modal-title gradient-text" id="cvDownloadModalLabel">Download CV</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+   <div class="modal fade" id="cvDownloadModal" tabindex="-1" aria-labelledby="cvDownloadModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content card-glassmorphism">
+            <div class="modal-header border-0 pb-0">
+                <h5 class="modal-title gradient-text" id="cvDownloadModalLabel">Download CV</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center pt-0">
+                <p class="text-gray-300 mb-4">Please choose the CV language you'd like to download:</p>
+                <div class="d-grid gap-3">
+                    <a href="#" id="downloadCvArabic" data-cv-path="{{asset('cv/MyCv-AR.docx (1).pdf')}}" class="btn btn-gradient btn-lg">
+                        <i class="fas fa-file-pdf me-2"></i> Download CV (عربي)
+                    </a>
+                    <a href="#" id="downloadCvEnglish" data-cv-path="{{asset('cv/CV-Abdulrahman-Hilal.pdf')}}" class="btn btn-gradient btn-lg">
+                        <i class="fas fa-file-pdf me-2"></i> Download CV (English)
+                    </a>
                 </div>
-                <div class="modal-body text-center pt-0">
-                    <p class="text-gray-300 mb-4">Please choose the CV language you'd like to download:</p>
-                    <div class="d-grid gap-3">
-                        <a href="{{asset('cv/MyCv-AR.docx (1).pdf')}}" download class="btn btn-gradient btn-lg" data-bs-dismiss="modal">
-                            <i class="fas fa-file-pdf me-2"></i> Download CV (Arabic)
-                        </a>
-                        <a href="{{asset('cv/CV-Abdulrahman-Hilal.pdf')}}" download class="btn btn-gradient btn-lg" data-bs-dismiss="modal">
-                            <i class="fas fa-file-pdf me-2"></i> Download CV (English)
-                        </a>
-                    </div>
-                </div>
-                <div class="modal-footer border-0 pt-0">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
+            </div>
+            <div class="modal-footer border-0 pt-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+
+               // جلب أزرار التحميل داخل المودال
+            const downloadCvArabicBtn = document.getElementById('downloadCvArabic');
+            const downloadCvEnglishBtn = document.getElementById('downloadCvEnglish');
+            const cvDownloadModal = document.getElementById('cvDownloadModal');
+            const bsCvDownloadModal = new bootstrap.Modal(cvDownloadModal); // تهيئة المودال ككائن Bootstrap
+
+            // دالة مساعدة لتشغيل التحميل
+            function triggerDownload(filePath) {
+                const link = document.createElement('a');
+                link.href = filePath;
+                link.download = filePath.substring(filePath.lastIndexOf('/') + 1); // يستخرج اسم الملف من المسار
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link); // تنظيف العنصر بعد التحميل
+            }
+
+            // الاستماع للنقر على زر تحميل CV العربي
+            if (downloadCvArabicBtn) {
+                downloadCvArabicBtn.addEventListener('click', (e) => {
+                    e.preventDefault(); // منع السلوك الافتراضي للرابط (#)
+                    const filePath = downloadCvArabicBtn.dataset.cvPath; // جلب المسار من data-cv-path
+                    bsCvDownloadModal.hide(); // إغلاق المودال
+                    // تأخير بسيط لضمان إغلاق المودال قبل بدء التحميل (قد لا يكون ضرورياً دائماً ولكن يزيد الموثوقية)
+                    setTimeout(() => {
+                        triggerDownload(filePath);
+                    }, 100);
+                });
+            }
+
+            // الاستماع للنقر على زر تحميل CV الإنجليزي
+            if (downloadCvEnglishBtn) {
+                downloadCvEnglishBtn.addEventListener('click', (e) => {
+                    e.preventDefault(); // منع السلوك الافتراضي للرابط (#)
+                    const filePath = downloadCvEnglishBtn.dataset.cvPath; // جلب المسار من data-cv-path
+                    bsCvDownloadModal.hide(); // إغلاق المودال
+                    setTimeout(() => {
+                        triggerDownload(filePath);
+                    }, 100);
+                });
+            }
             // Intersection Observer for scroll animations
             const sections = document.querySelectorAll(
                 '.fade-in-left, .fade-in-bottom, .project-item-animated, .skill-item-animated');
