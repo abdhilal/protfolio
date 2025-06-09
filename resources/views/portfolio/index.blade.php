@@ -271,6 +271,16 @@
                                 Completed backend development training focusing on Laravel framework.
                             </p>
                         </div>
+                        <div class="card-glassmorphism p-6">
+                            <h3 class="text-xl font-semibold mb-2 d-flex align-items-center" style="color: #ff3c00;">
+                                <i class="fas fa-brain me-2" style="font-size: 24px;"></i> AI (ML+DL) Intern
+                            </h3>
+                            <p class="text-gray-300 mb-2">Education Without Borders (MIDAD) Organization</p>
+                            <p class="text-sm text-gray-400 d-flex align-items-center">
+                                <i class="far fa-calendar-alt me-2" style="font-size: 18px;"></i> May 2025 – January
+                                2026 (Ongoing)
+                            </p>
+                        </div>
                     </div>
                 </section>
 
@@ -351,30 +361,35 @@
         </div>
     </div>
 
-   <div class="modal fade" id="cvDownloadModal" tabindex="-1" aria-labelledby="cvDownloadModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content card-glassmorphism">
-            <div class="modal-header border-0 pb-0">
-                <h5 class="modal-title gradient-text" id="cvDownloadModalLabel">Download CV</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body text-center pt-0">
-                <p class="text-gray-300 mb-4">Please choose the CV language you'd like to download:</p>
-                <div class="d-grid gap-3">
-                    <a href="#" id="downloadCvArabic" data-cv-path="{{asset('cv/CV-Abdulrahman-Hilal-ar.pdf')}}" class="btn btn-gradient btn-lg">
-                        <i class="fas fa-file-pdf me-2"></i> Download CV (عربي)
-                    </a>
-                    <a href="#" id="downloadCvEnglish" data-cv-path="{{asset('cv/CV-Abdulrahman-Hilal-en.pdf')}}" class="btn btn-gradient btn-lg">
-                        <i class="fas fa-file-pdf me-2"></i> Download CV (English)
-                    </a>
+    <div class="modal fade" id="cvDownloadModal" tabindex="-1" aria-labelledby="cvDownloadModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content card-glassmorphism">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title gradient-text" id="cvDownloadModalLabel">Download CV</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </div>
-            <div class="modal-footer border-0 pt-0">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <div class="modal-body text-center pt-0">
+                    <p class="text-gray-300 mb-4">Please choose the CV language you'd like to download:</p>
+                    <div class="d-grid gap-3">
+                        <a href="#" id="downloadCvArabic"
+                            data-cv-path="{{ asset('cv/CV-Abdulrahman-Hilal-ar.pdf') }}"
+                            class="btn btn-gradient btn-lg">
+                            <i class="fas fa-file-pdf me-2"></i> Download CV (عربي)
+                        </a>
+                        <a href="#" id="downloadCvEnglish"
+                            data-cv-path="{{ asset('cv/CV-Abdulrahman-Hilal-en.pdf') }}"
+                            class="btn btn-gradient btn-lg">
+                            <i class="fas fa-file-pdf me-2"></i> Download CV (English)
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
@@ -382,7 +397,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
-               // جلب أزرار التحميل داخل المودال
+            // جلب أزرار التحميل داخل المودال
             const downloadCvArabicBtn = document.getElementById('downloadCvArabic');
             const downloadCvEnglishBtn = document.getElementById('downloadCvEnglish');
             const cvDownloadModal = document.getElementById('cvDownloadModal');
