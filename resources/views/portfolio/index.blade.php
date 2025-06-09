@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html lang="en"> <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdulrahman Hilal - Portfolio</title>
@@ -77,9 +75,9 @@
             <a href="https://github.com/abdhilal" target="_blank" rel="noopener noreferrer"
                 class="text-gray-300 custom-hover"><i class="fab fa-github fa-2x"></i></a>
         </div>
-        <a href="{{asset('cv/CV-Abdulrahman-Hilal.pdf')}}" download class="btn btn-gradient mt-3">
+        <button type="button" class="btn btn-gradient mt-3" data-bs-toggle="modal" data-bs-target="#cvDownloadModal">
             <i class="fas fa-download me-2"></i> Download CV
-        </a>
+        </button>
     </div>
     <div class="mt-4 mt-md-0">
         <div class="rounded-circle border border-4"
@@ -273,14 +271,6 @@
                     </div>
                 </section>
 
-
-
-
-
-
-
-
-
                 <section id="projects" class="section-padding">
                     <h2 class="text-3xl font-bold gradient-text text-center mb-12 fade-in-left">Projects</h2>
                     <div class="project-grid mx-auto">
@@ -321,16 +311,6 @@
                     </div>
                 </section>
 
-
-
-
-
-
-
-
-
-
-
                 <section id="contact" class="section-padding">
                     <h2 class="text-3xl font-bold gradient-text text-center mb-12 fade-in-left">Contact Me</h2>
                     <div class="card-glassmorphism p-6 mx-auto fade-in-bottom contact-container">
@@ -368,6 +348,31 @@
         </div>
     </div>
 
+    <div class="modal fade" id="cvDownloadModal" tabindex="-1" aria-labelledby="cvDownloadModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content card-glassmorphism">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title gradient-text" id="cvDownloadModalLabel">Download CV</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center pt-0">
+                    <p class="text-gray-300 mb-4">Please choose the CV language you'd like to download:</p>
+                    <div class="d-grid gap-3">
+                        <a href="{{asset('cv/MyCv-AR.docx (1).pdf')}}" download class="btn btn-gradient btn-lg" data-bs-dismiss="modal">
+                            <i class="fas fa-file-pdf me-2"></i> Download CV (Arabic)
+                        </a>
+                        <a href="{{asset('cv/CV-Abdulrahman-Hilal.pdf')}}" download class="btn btn-gradient btn-lg" data-bs-dismiss="modal">
+                            <i class="fas fa-file-pdf me-2"></i> Download CV (English)
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
@@ -399,10 +404,6 @@
             sections.forEach(section => {
                 observer.observe(section);
             });
-
-
-
-
 
             // Handle mobile navigation collapse after clicking a link
             const navLinks = document.querySelectorAll('.header-nav-items .nav-link');
