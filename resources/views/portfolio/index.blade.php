@@ -77,7 +77,8 @@
             <a href="https://github.com/abdhilal" target="_blank" rel="noopener noreferrer"
                 class="text-gray-300 custom-hover"><i class="fab fa-github fa-2x"></i></a>
         </div>
-        <a href="{{asset('cv/CV-Abdulrahman-Hilal.pdf')}}" download class="btn btn-gradient mt-3">
+        {{-- <a href="{{asset('cv/CV-Abdulrahman-Hilal.pdf')}}" download class="btn btn-gradient mt-3"> --}}
+        <a href="https://docs.google.com/document/d/12XxHFOunRpJtbO8gRhYUPSP6oZeKh4cV/edit?tab=t.0" class="btn btn-gradient mt-3">
             <i class="fas fa-download me-2"></i> Download CV
         </a>
     </div>
