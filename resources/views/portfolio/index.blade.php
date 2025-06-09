@@ -361,10 +361,10 @@
             <div class="modal-body text-center pt-0">
                 <p class="text-gray-300 mb-4">Please choose the CV language you'd like to download:</p>
                 <div class="d-grid gap-3">
-                    <a href="#" id="downloadCvArabic" data-cv-path="{{asset('cv/MyCv-AR.docx (1).pdf')}}" class="btn btn-gradient btn-lg">
+                    <a href="#" id="downloadCvArabic" data-cv-path="{{asset('cv/CV-Abdulrahman-Hilal-ar.pdf')}}" class="btn btn-gradient btn-lg">
                         <i class="fas fa-file-pdf me-2"></i> Download CV (عربي)
                     </a>
-                    <a href="#" id="downloadCvEnglish" data-cv-path="{{asset('cv/CV-Abdulrahman-Hilal.pdf')}}" class="btn btn-gradient btn-lg">
+                    <a href="#" id="downloadCvEnglish" data-cv-path="{{asset('cv/CV-Abdulrahman-Hilal-en.pdf')}}" class="btn btn-gradient btn-lg">
                         <i class="fas fa-file-pdf me-2"></i> Download CV (English)
                     </a>
                 </div>
