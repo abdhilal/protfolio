@@ -97,7 +97,7 @@
                     <div class="mt-4 mt-md-0">
                         <div class="rounded-circle border border-4"
                             style="border-color: var(--blue-400) !important; width: 256px; height: 256px; overflow: hidden;">
-                            <img src="{{ asset('images/my/image.png') }}" alt="Abdulrahman Hilal" class="w-100 h-100"
+                            <img src="{{ asset('images/my/imamy.png') }}" alt="Abdulrahman Hilal" class="w-100 h-100"
                                 style="object-fit: cover;">
                         </div>
                     </div>
