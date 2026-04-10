@@ -4,7 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdulrahman Hilal - Portfolio</title>
+    <title>Abdulrahman Hilal | Laravel Backend Developer</title>
+    <meta name="description"
+        content="Abdulrahman Hilal - Backend Developer specializing in Laravel, PHP, MySQL, REST APIs, and secure web applications. Explore portfolio projects and contact information.">
+    <meta name="keywords"
+        content="Abdulrahman Hilal, Laravel Developer, PHP Developer, Backend Developer, MySQL, REST API, JWT, Portfolio">
+    <meta name="author" content="Abdulrahman Hilal">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://abdr-hilal.ct.ws/">
+    <meta property="og:title" content="Abdulrahman Hilal | Laravel Backend Developer">
+    <meta property="og:description"
+        content="Laravel Backend Developer Portfolio with projects, REST APIs, and contact information.">
+    <meta property="og:image" content="https://abdr-hilal.ct.ws/images/my/imamy.png">
+    <meta property="og:url" content="https://abdr-hilal.ct.ws/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Abdulrahman Hilal Portfolio">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Abdulrahman Hilal | Laravel Backend Developer">
+    <meta name="twitter:description"
+        content="Backend developer specializing in Laravel, PHP, MySQL, REST APIs, and secure web applications.">
+    <meta name="twitter:image" content="https://abdr-hilal.ct.ws/images/my/imamy.png">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Abdulrahman Hilal",
+            "url": "https://abdr-hilal.ct.ws/",
+            "image": "https://abdr-hilal.ct.ws/images/my/imamy.png",
+            "sameAs": [
+                "https://github.com/abdhilal",
+                "https://www.linkedin.com/in/abdrhilal/",
+                "https://www.instagram.com/abdr_hilal/"
+            ],
+            "jobTitle": "Laravel Backend Developer",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "Freelancer"
+            }
+        }
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -77,17 +115,22 @@
                 <section id="hero"
                     class="py-12 d-flex flex-column flex-md-row align-items-center text-center md:text-left justify-content-center md:space-x-40 space-y-6 md:space-y-0">
                     <div class="hero-content-left fade-in-left">
-                        <h1 class="text-5xl font-bold gradient-text mb-2">Abdulrahman Hilal</h1>
-                        <p class="text-xl text-gray-300 mb-4">Backend Developer</p>
+                        <h1 class="text-5xl font-bold gradient-text mb-2">Abdulrahman Hilal - Laravel Backend Developer
+                        </h1>
+                        <p class="text-xl text-gray-300 mb-4">Backend Developer specializing in PHP, MySQL, REST APIs,
+                            and secure Laravel applications</p>
                         <div class="d-flex justify-content-center md:justify-start space-x-4 mb-4">
                             <a href="mailto:abdrahmanmhran3@gmail.com" target="_blank" rel="noopener noreferrer"
                                 class="text-gray-300 custom-hover"><i class="fas fa-envelope fa-2x"></i></a>
                             <a href="https://wa.me/+905010588210" target="_blank" rel="noopener noreferrer"
                                 class="text-gray-300 custom-hover"><i class="fab fa-whatsapp fa-2x"></i></a>
-                            <a href="http://www.linkedin.com/in/abdrhilal" target="_blank" rel="noopener noreferrer"
-                                class="text-gray-300 custom-hover"><i class="fab fa-linkedin fa-2x"></i></a>
+                            <a href="https://www.linkedin.com/in/abdrhilal/" target="_blank"
+                                rel="noopener noreferrer" class="text-gray-300 custom-hover"><i
+                                    class="fab fa-linkedin fa-2x"></i></a>
                             <a href="https://github.com/abdhilal" target="_blank" rel="noopener noreferrer"
                                 class="text-gray-300 custom-hover"><i class="fab fa-github fa-2x"></i></a>
+                            <a href="https://www.instagram.com/abdr_hilal/" target="_blank" rel="noopener noreferrer"
+                                class="text-gray-300 custom-hover"><i class="fab fa-instagram fa-2x"></i></a>
                         </div>
                         <button type="button" class="btn btn-gradient mt-3" data-bs-toggle="modal"
                             data-bs-target="#cvDownloadModal">
@@ -97,7 +140,8 @@
                     <div class="mt-4 mt-md-0">
                         <div class="rounded-circle border border-4"
                             style="border-color: var(--blue-400) !important; width: 256px; height: 256px; overflow: hidden;">
-                            <img src="{{ asset('images/my/imamy.png') }}" alt="Abdulrahman Hilal" class="w-100 h-100"
+                            <img src="{{ asset('images/my/imamy.png') }}"
+                                alt="Abdulrahman Hilal Laravel Backend Developer" class="w-100 h-100"
                                 style="object-fit: cover;">
                         </div>
                     </div>
@@ -108,7 +152,8 @@
                         <p class="text-sm text-gray-300 mb-4">
                             Hello! I'm <span class="text-blue-400 font-semibold">Abdulrahman Hilal</span>, a backend
                             developer specializing in <strong>Laravel</strong>, <strong>PHP</strong>, and
-                            <strong>MySQL</strong>. I am currently studying at
+                            <strong>MySQL</strong>, with hands-on experience in <strong>REST API development with JWT
+                                authentication</strong>. I am currently studying at
                             the Technical Institute of Computer Science and living in Azaz,
                             Aleppo.
                         </p>
@@ -302,6 +347,11 @@
 
                 <section id="projects" class="section-padding">
                     <h2 class="text-3xl font-bold gradient-text text-center mb-12 fade-in-left">Projects</h2>
+                    <p class="text-center text-gray-300 mx-auto mb-5" style="max-width: 900px;">
+                        Explore selected work including a Laravel social media platform, an ERP system using Laravel,
+                        REST API development with JWT authentication, dashboard systems, and MySQL-based backend
+                        solutions built for performance and scalability.
+                    </p>
                     <div class="project-grid mx-auto">
 
                         @foreach ($projects as $project)
@@ -356,7 +406,8 @@
                                 <i class="fab fa-whatsapp fa-3x mb-2"></i>
                                 <span class="text-sm">WhatsApp</span>
                             </a>
-                            <a href="http://www.linkedin.com/in/abdrhilal" target="_blank" rel="noopener noreferrer"
+                            <a href="https://www.linkedin.com/in/abdrhilal/" target="_blank"
+                                rel="noopener noreferrer"
                                 class="text-gray-300 custom-hover d-flex flex-column align-items-center text-decoration-none p-3">
                                 <i class="fab fa-linkedin fa-3x mb-2"></i>
                                 <span class="text-sm">LinkedIn</span>
@@ -365,6 +416,11 @@
                                 class="text-gray-300 custom-hover d-flex flex-column align-items-center text-decoration-none p-3">
                                 <i class="fab fa-github fa-3x mb-2"></i>
                                 <span class="text-sm">GitHub</span>
+                            </a>
+                            <a href="https://www.instagram.com/abdr_hilal/" target="_blank" rel="noopener noreferrer"
+                                class="text-gray-300 custom-hover d-flex flex-column align-items-center text-decoration-none p-3">
+                                <i class="fab fa-instagram fa-3x mb-2"></i>
+                                <span class="text-sm">Instagram</span>
                             </a>
                         </div>
                     </div>
