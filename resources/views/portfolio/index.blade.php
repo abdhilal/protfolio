@@ -4,31 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdulrahman Hilal | Laravel Backend Developer</title>
+    <title>Abdulrahman Hilal | Senior Laravel Backend Developer Portfolio</title>
     <meta name="description"
-        content="Abdulrahman Hilal - Backend Developer specializing in Laravel, PHP, MySQL, REST APIs, and secure web applications. Explore portfolio projects and contact information.">
+        content="Explore the portfolio of Abdulrahman Hilal, a specialized Laravel Backend Developer. Expertise in REST APIs, MySQL, and AI integration. Building secure and scalable web solutions.">
     <meta name="keywords"
-        content="Abdulrahman Hilal, Laravel Developer, PHP Developer, Backend Developer, MySQL, REST API, JWT, Portfolio">
+        content="Abdulrahman Hilal, عبد الرحمن هلال, Laravel Developer, PHP Specialist, API Expert, Backend Developer, MySQL, REST API, JWT, Portfolio">
     <meta name="author" content="Abdulrahman Hilal">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://abdr-hilal.ct.ws/">
-    <meta property="og:title" content="Abdulrahman Hilal | Laravel Backend Developer">
+    <meta property="og:title" content="Abdulrahman Hilal | Senior Laravel Backend Developer Portfolio">
     <meta property="og:description"
-        content="Laravel Backend Developer Portfolio with projects, REST APIs, and contact information.">
+        content="Explore the portfolio of Abdulrahman Hilal, Laravel Backend Developer specializing in REST APIs, MySQL, and scalable web solutions.">
     <meta property="og:image" content="https://abdr-hilal.ct.ws/images/my/imamy.png">
     <meta property="og:url" content="https://abdr-hilal.ct.ws/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Abdulrahman Hilal Portfolio">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Abdulrahman Hilal | Laravel Backend Developer">
+    <meta name="twitter:title" content="Abdulrahman Hilal | Senior Laravel Backend Developer Portfolio">
     <meta name="twitter:description"
-        content="Backend developer specializing in Laravel, PHP, MySQL, REST APIs, and secure web applications.">
+        content="Explore the portfolio of Abdulrahman Hilal, Laravel Backend Developer specializing in REST APIs, MySQL, and scalable web solutions.">
     <meta name="twitter:image" content="https://abdr-hilal.ct.ws/images/my/imamy.png">
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "Person",
             "name": "Abdulrahman Hilal",
+            "alternateName": "عبد الرحمن هلال",
+            "description": "Laravel Backend Developer specializing in REST APIs, MySQL, PHP, and AI integration.",
             "url": "https://abdr-hilal.ct.ws/",
             "image": "https://abdr-hilal.ct.ws/images/my/imamy.png",
             "sameAs": [
@@ -36,7 +38,22 @@
                 "https://www.linkedin.com/in/abdrhilal/",
                 "https://www.instagram.com/abdr_hilal/"
             ],
-            "jobTitle": "Laravel Backend Developer",
+            "jobTitle": "Senior Laravel Backend Developer",
+            "knowsAbout": [
+                "Laravel",
+                "PHP",
+                "MySQL",
+                "REST APIs",
+                "JWT Authentication",
+                "Artificial Intelligence",
+                "Machine Learning"
+            ],
+            "hasCredential": [
+                {
+                    "@type": "EducationalOccupationalCredential",
+                    "name": "Backend Development (Laravel) - MAPs Organization"
+                }
+            ],
             "worksFor": {
                 "@type": "Organization",
                 "name": "Freelancer"
@@ -115,10 +132,10 @@
                 <section id="hero"
                     class="py-12 d-flex flex-column flex-md-row align-items-center text-center md:text-left justify-content-center md:space-x-40 space-y-6 md:space-y-0">
                     <div class="hero-content-left fade-in-left">
-                        <h1 class="text-5xl font-bold gradient-text mb-2">Abdulrahman Hilal - Laravel Backend Developer
-                        </h1>
-                        <p class="text-xl text-gray-300 mb-4">Backend Developer specializing in PHP, MySQL, REST APIs,
-                            and secure Laravel applications</p>
+                        <p class="text-lg text-gray-300 mb-2">Abdulrahman Hilal | عبد الرحمن هلال</p>
+                        <h1 class="text-5xl font-bold gradient-text mb-2">Senior Laravel Backend Developer</h1>
+                        <p class="text-xl text-gray-300 mb-4">PHP Specialist, API Expert, and backend engineer building
+                            secure, scalable web applications with Laravel and MySQL</p>
                         <div class="d-flex justify-content-center md:justify-start space-x-4 mb-4">
                             <a href="mailto:abdrahmanmhran3@gmail.com" target="_blank" rel="noopener noreferrer"
                                 class="text-gray-300 custom-hover"><i class="fas fa-envelope fa-2x"></i></a>
@@ -141,8 +158,8 @@
                         <div class="rounded-circle border border-4"
                             style="border-color: var(--blue-400) !important; width: 256px; height: 256px; overflow: hidden;">
                             <img src="{{ asset('images/my/imamy.png') }}"
-                                alt="Abdulrahman Hilal Laravel Backend Developer" class="w-100 h-100"
-                                style="object-fit: cover;">
+                                alt="Abdulrahman Hilal portrait - Senior Laravel Backend Developer"
+                                class="w-100 h-100" style="object-fit: cover;">
                         </div>
                     </div>
                 </section>
@@ -357,11 +374,13 @@
                         @foreach ($projects as $project)
                             <div class="card-glassmorphism p-4 project-item-animated">
                                 @if ($project->image_cover)
-                                    <img src="{{ asset($project->image_cover) }}" alt="{{ $project->title }}"
+                                    <img src="{{ asset($project->image_cover) }}"
+                                        alt="Project {{ $project->title }} - Laravel Backend Development by Abdulrahman Hilal"
                                         class="w-100 h-64 object-cover rounded-top mb-4">
                                 @else
                                     <iframe width="100%" height="320" src="{{ $project->link_video }}"
-                                        title=" Enterprise Resource Planning (ERP) System" frameborder="0"
+                                        title="Project video for {{ $project->title }} - Laravel Backend Development by Abdulrahman Hilal"
+                                        frameborder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                         allowfullscreen class="rounded-top">
                                     </iframe>
