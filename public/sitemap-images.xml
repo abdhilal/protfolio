@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://abdr-hilal.ct.ws/gallery</loc>
+    <image:image>
+      <image:loc>https://abdr-hilal.ct.ws/images/profile/abdulrahman-hilal-laravel-backend-developer-1.jpg</image:loc>
+      <image:title>Abdulrahman Hilal Laravel Backend Developer</image:title>
+      <image:caption>Abdulrahman Hilal - Laravel Backend Developer portrait</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://abdr-hilal.ct.ws/images/profile/abdulrahman-hilal-backend-developer-2.jpg</image:loc>
+      <image:title>Abdulrahman Hilal Backend Developer</image:title>
+      <image:caption>Abdulrahman Hilal professional profile photo</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://abdr-hilal.ct.ws/images/my/imamy.png</image:loc>
+      <image:title>Abdulrahman Hilal official portfolio image</image:title>
+      <image:caption>Official image used in Abdulrahman Hilal portfolio</image:caption>
+    </image:image>
+  </url>
+</urlset>

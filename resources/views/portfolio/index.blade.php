@@ -4,60 +4,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdulrahman Hilal | Senior Laravel Backend Developer Portfolio</title>
+    <title>Abdulrahman Hilal | Laravel Backend Developer Portfolio | عبد الرحمن هلال</title>
     <meta name="description"
-        content="Explore the portfolio of Abdulrahman Hilal, a specialized Laravel Backend Developer. Expertise in REST APIs, MySQL, and AI integration. Building secure and scalable web solutions.">
+        content="Official portfolio of Abdulrahman Hilal (عبد الرحمن هلال), Laravel Backend Developer. REST APIs, MySQL, PHP, and scalable web solutions with Arabic and English profile pages.">
     <meta name="keywords"
-        content="Abdulrahman Hilal, عبد الرحمن هلال, Laravel Developer, PHP Specialist, API Expert, Backend Developer, MySQL, REST API, JWT, Portfolio">
+        content="Abdulrahman Hilal, عبد الرحمن هلال, Laravel Developer, Backend Developer, مطور Laravel, مطور باك اند, PHP, MySQL, REST API, Portfolio">
     <meta name="author" content="Abdulrahman Hilal">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="language" content="Arabic, English">
     <link rel="canonical" href="https://abdr-hilal.ct.ws/">
-    <meta property="og:title" content="Abdulrahman Hilal | Senior Laravel Backend Developer Portfolio">
+    <link rel="alternate" hreflang="ar" href="https://abdr-hilal.ct.ws/">
+    <link rel="alternate" hreflang="en" href="https://abdr-hilal.ct.ws/">
+    <meta property="og:title" content="Abdulrahman Hilal | Laravel Backend Developer Portfolio">
     <meta property="og:description"
-        content="Explore the portfolio of Abdulrahman Hilal, Laravel Backend Developer specializing in REST APIs, MySQL, and scalable web solutions.">
-    <meta property="og:image" content="https://abdr-hilal.ct.ws/images/my/imamy.png">
+        content="Official website of Abdulrahman Hilal - Laravel Backend Developer with Arabic and English portfolio, gallery, and CV.">
+    <meta property="og:image"
+        content="https://abdr-hilal.ct.ws/images/profile/abdulrahman-hilal-laravel-backend-developer-1.jpg">
     <meta property="og:url" content="https://abdr-hilal.ct.ws/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Abdulrahman Hilal Portfolio">
+    <meta property="og:locale" content="ar_SY">
+    <meta property="og:locale:alternate" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Abdulrahman Hilal | Senior Laravel Backend Developer Portfolio">
+    <meta name="twitter:title" content="Abdulrahman Hilal | Laravel Backend Developer Portfolio">
     <meta name="twitter:description"
-        content="Explore the portfolio of Abdulrahman Hilal, Laravel Backend Developer specializing in REST APIs, MySQL, and scalable web solutions.">
-    <meta name="twitter:image" content="https://abdr-hilal.ct.ws/images/my/imamy.png">
+        content="Laravel backend engineer profile, projects, gallery, and CV for Abdulrahman Hilal.">
+    <meta name="twitter:image"
+        content="https://abdr-hilal.ct.ws/images/profile/abdulrahman-hilal-laravel-backend-developer-1.jpg">
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Abdulrahman Hilal",
-            "alternateName": "عبد الرحمن هلال",
-            "description": "Laravel Backend Developer specializing in REST APIs, MySQL, PHP, and AI integration.",
-            "url": "https://abdr-hilal.ct.ws/",
-            "image": "https://abdr-hilal.ct.ws/images/my/imamy.png",
-            "sameAs": [
-                "https://github.com/abdhilal",
-                "https://www.linkedin.com/in/abdrhilal/",
-                "https://www.instagram.com/abdr_hilal/"
-            ],
-            "jobTitle": "Senior Laravel Backend Developer",
-            "knowsAbout": [
-                "Laravel",
-                "PHP",
-                "MySQL",
-                "REST APIs",
-                "JWT Authentication",
-                "Artificial Intelligence",
-                "Machine Learning"
-            ],
-            "hasCredential": [
+            "@graph": [{
+                    "@type": "WebSite",
+                    "name": "Abdulrahman Hilal Portfolio",
+                    "url": "https://abdr-hilal.ct.ws/"
+                },
                 {
-                    "@type": "EducationalOccupationalCredential",
-                    "name": "Backend Development (Laravel) - MAPs Organization"
+                    "@type": "WebPage",
+                    "name": "Abdulrahman Hilal Portfolio Home",
+                    "url": "https://abdr-hilal.ct.ws/",
+                    "inLanguage": ["en", "ar"]
+                },
+                {
+                    "@type": "Person",
+                    "name": "Abdulrahman Hilal",
+                    "alternateName": "عبد الرحمن هلال",
+                    "description": "Laravel Backend Developer specializing in REST APIs, MySQL, PHP, and AI integration.",
+                    "url": "https://abdr-hilal.ct.ws/",
+                    "image": "https://abdr-hilal.ct.ws/images/profile/abdulrahman-hilal-laravel-backend-developer-1.jpg",
+                    "sameAs": [
+                        "https://github.com/abdhilal",
+                        "https://www.linkedin.com/in/abdrhilal/",
+                        "https://www.instagram.com/abdr_hilal/"
+                    ],
+                    "jobTitle": "Senior Laravel Backend Developer",
+                    "knowsAbout": [
+                        "Laravel",
+                        "PHP",
+                        "MySQL",
+                        "REST APIs",
+                        "JWT Authentication",
+                        "Artificial Intelligence",
+                        "Machine Learning"
+                    ],
+                    "hasCredential": [{
+                        "@type": "EducationalOccupationalCredential",
+                        "name": "Backend Development (Laravel) - MAPs Organization"
+                    }],
+                    "worksFor": {
+                        "@type": "Organization",
+                        "name": "Freelancer"
+                    }
                 }
-            ],
-            "worksFor": {
-                "@type": "Organization",
-                "name": "Freelancer"
-            }
+            ]
         }
     </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -123,6 +142,18 @@
                             <a class="nav-link custom-hover py-2 px-3" href="#contact"><i class="fas fa-envelope me-2"
                                     style="font-size: 18px;"></i> Contact</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link custom-hover py-2 px-3" href="{{ route('portfolio.gallery') }}"><i
+                                    class="fas fa-image me-2" style="font-size: 18px;"></i> Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link custom-hover py-2 px-3" href="{{ route('portfolio.cv') }}"><i
+                                    class="fas fa-file-alt me-2" style="font-size: 18px;"></i> CV</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link custom-hover py-2 px-3" href="{{ route('portfolio.profile') }}"><i
+                                    class="fas fa-id-badge me-2" style="font-size: 18px;"></i> Profile</a>
+                        </li>
                     </ul>
                 </div>
 
@@ -153,12 +184,15 @@
                             data-bs-target="#cvDownloadModal">
                             <i class="fas fa-download me-2"></i> Download CV
                         </button>
+                        <a href="{{ route('portfolio.gallery') }}" class="btn btn-gradient mt-3 ms-2">
+                            <i class="fas fa-images me-2"></i> View Photo Gallery
+                        </a>
                     </div>
                     <div class="mt-4 mt-md-0">
                         <div class="rounded-circle border border-4"
                             style="border-color: var(--blue-400) !important; width: 256px; height: 256px; overflow: hidden;">
-                            <img src="{{ asset('images/my/imamy.png') }}"
-                                alt="Abdulrahman Hilal portrait - Senior Laravel Backend Developer"
+                            <img src="{{ asset('images/profile/abdulrahman-hilal-laravel-backend-developer-1.jpg') }}"
+                                alt="Abdulrahman Hilal portrait - Laravel Backend Developer - عبد الرحمن هلال"
                                 class="w-100 h-100" style="object-fit: cover;">
                         </div>
                     </div>
@@ -173,6 +207,11 @@
                                 authentication</strong>. I am currently studying at
                             the Technical Institute of Computer Science and living in Azaz,
                             Aleppo.
+                        </p>
+                        <p class="text-sm text-gray-300 mb-4" lang="ar" dir="rtl">
+                            أنا <strong>عبد الرحمن هلال</strong>، مطور Backend متخصص في <strong>Laravel</strong> و
+                            <strong>PHP</strong> و<strong>MySQL</strong>، وأعمل على تطوير تطبيقات ويب آمنة وقابلة
+                            للتوسع مع بناء واجهات API احترافية.
                         </p>
                         <p class="text-sm text-gray-300 mb-4">
                             I have expertise in developing robust systems using Laravel, with a strong focus on high
@@ -331,7 +370,7 @@
                             </h3>
                             <p class="text-gray-300 mb-2">University of Aleppo - Liberated Areas</p>
                             <p class="text-sm text-gray-400 d-flex align-items-center">
-                                <i class="far fa-calendar-alt me-2" style="font-size: 18px;"></i> 2023 – 2025
+                                <i class="far fa-calendar-alt me-2" style="font-size: 18px;"></i> 2023 - 2025
                                 (Completed)
                             </p>
                         </div>
@@ -342,7 +381,7 @@
                             </h3>
                             <p class="text-gray-300 mb-2">MAPs Organization</p>
                             <p class="text-sm text-gray-400 d-flex align-items-center mb-1">
-                                <i class="far fa-calendar-alt me-2" style="font-size: 18px;"></i> Sep 2024 – Mar 2025
+                                <i class="far fa-calendar-alt me-2" style="font-size: 18px;"></i> Sep 2024 - Mar 2025
                             </p>
                             <p class="text-sm text-gray-400 mb-1">Duration: 245 hours</p>
                             <p class="text-gray-300 mb-0">
@@ -355,7 +394,7 @@
                             </h3>
                             <p class="text-gray-300 mb-2">Education Without Borders (MIDAD) Organization</p>
                             <p class="text-sm text-gray-400 d-flex align-items-center">
-                                <i class="far fa-calendar-alt me-2" style="font-size: 18px;"></i> May 2025 – January
+                                <i class="far fa-calendar-alt me-2" style="font-size: 18px;"></i> May 2025 - January
                                 2026 (Ongoing)
                             </p>
                         </div>
@@ -376,7 +415,8 @@
                                 @if ($project->image_cover)
                                     <img src="{{ asset($project->image_cover) }}"
                                         alt="Project {{ $project->title }} - Laravel Backend Development by Abdulrahman Hilal"
-                                        class="w-100 h-64 object-cover rounded-top mb-4">
+                                        class="w-100 h-64 object-cover rounded-top mb-4" loading="lazy"
+                                        decoding="async">
                                 @else
                                     <iframe width="100%" height="320" src="{{ $project->link_video }}"
                                         title="Project video for {{ $project->title }} - Laravel Backend Development by Abdulrahman Hilal"
@@ -466,7 +506,7 @@
                         <a href="#" id="downloadCvArabic"
                             data-cv-path="{{ asset('cv/CV-Abdulrahman-Hilal-ar.pdf') }}"
                             class="btn btn-gradient btn-lg">
-                            <i class="fas fa-file-pdf me-2"></i> Download CV (عربي)
+                            <i class="fas fa-file-pdf me-2"></i> Download CV (العربية)
                         </a>
                         <a href="#" id="downloadCvEnglish"
                             data-cv-path="{{ asset('cv/CV-Abdulrahman-Hilal-en.pdf') }}"
@@ -488,41 +528,40 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
-            // جلب أزرار التحميل داخل المودال
+            // CV modal buttons
             const downloadCvArabicBtn = document.getElementById('downloadCvArabic');
             const downloadCvEnglishBtn = document.getElementById('downloadCvEnglish');
             const cvDownloadModal = document.getElementById('cvDownloadModal');
-            const bsCvDownloadModal = new bootstrap.Modal(cvDownloadModal); // تهيئة المودال ككائن Bootstrap
+            const bsCvDownloadModal = new bootstrap.Modal(cvDownloadModal);
 
-            // دالة مساعدة لتشغيل التحميل
+            // Helper to trigger file download
             function triggerDownload(filePath) {
                 const link = document.createElement('a');
                 link.href = filePath;
-                link.download = filePath.substring(filePath.lastIndexOf('/') + 1); // يستخرج اسم الملف من المسار
+                link.download = filePath.substring(filePath.lastIndexOf('/') + 1);
                 document.body.appendChild(link);
                 link.click();
-                document.body.removeChild(link); // تنظيف العنصر بعد التحميل
+                document.body.removeChild(link);
             }
 
-            // الاستماع للنقر على زر تحميل CV العربي
+            // Arabic CV download
             if (downloadCvArabicBtn) {
                 downloadCvArabicBtn.addEventListener('click', (e) => {
-                    e.preventDefault(); // منع السلوك الافتراضي للرابط (#)
-                    const filePath = downloadCvArabicBtn.dataset.cvPath; // جلب المسار من data-cv-path
-                    bsCvDownloadModal.hide(); // إغلاق المودال
-                    // تأخير بسيط لضمان إغلاق المودال قبل بدء التحميل (قد لا يكون ضرورياً دائماً ولكن يزيد الموثوقية)
+                    e.preventDefault();
+                    const filePath = downloadCvArabicBtn.dataset.cvPath;
+                    bsCvDownloadModal.hide();
                     setTimeout(() => {
                         triggerDownload(filePath);
                     }, 100);
                 });
             }
 
-            // الاستماع للنقر على زر تحميل CV الإنجليزي
+            // English CV download
             if (downloadCvEnglishBtn) {
                 downloadCvEnglishBtn.addEventListener('click', (e) => {
-                    e.preventDefault(); // منع السلوك الافتراضي للرابط (#)
-                    const filePath = downloadCvEnglishBtn.dataset.cvPath; // جلب المسار من data-cv-path
-                    bsCvDownloadModal.hide(); // إغلاق المودال
+                    e.preventDefault();
+                    const filePath = downloadCvEnglishBtn.dataset.cvPath;
+                    bsCvDownloadModal.hide();
                     setTimeout(() => {
                         triggerDownload(filePath);
                     }, 100);
@@ -575,3 +614,4 @@
 </body>
 
 </html>
+

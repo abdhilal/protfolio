@@ -4,7 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $project->title }} - Abdulrahman Hilal</title>
+    <title>{{ $project->title }} | Abdulrahman Hilal Portfolio Project</title>
+    <meta name="description" content="{{ \Illuminate\Support\Str::limit(strip_tags($project->overview ?? $project->description ?? ''), 160) }}">
+    <meta name="keywords" content="{{ $project->title }}, Abdulrahman Hilal, Laravel project, Backend project, API project">
+    <meta name="author" content="Abdulrahman Hilal">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="{{ route('project.show', $project->id) }}">
+    <meta property="og:title" content="{{ $project->title }} | Abdulrahman Hilal">
+    <meta property="og:description" content="{{ \Illuminate\Support\Str::limit(strip_tags($project->overview ?? $project->description ?? ''), 160) }}">
+    <meta property="og:image"
+        content="{{ $project->image_cover ? asset($project->image_cover) : asset('images/profile/abdulrahman-hilal-laravel-backend-developer-1.jpg') }}">
+    <meta property="og:url" content="{{ route('project.show', $project->id) }}">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Abdulrahman Hilal Portfolio">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $project->title }} | Abdulrahman Hilal">
+    <meta name="twitter:description" content="{{ \Illuminate\Support\Str::limit(strip_tags($project->overview ?? $project->description ?? ''), 160) }}">
+    <meta name="twitter:image"
+        content="{{ $project->image_cover ? asset($project->image_cover) : asset('images/profile/abdulrahman-hilal-laravel-backend-developer-1.jpg') }}">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "CreativeWork",
+            "name": @json($project->title),
+            "url": "{{ route('project.show', $project->id) }}",
+            "description": @json(\Illuminate\Support\Str::limit(strip_tags($project->overview ?? $project->description ?? ''), 180)),
+            "author": {
+                "@type": "Person",
+                "name": "Abdulrahman Hilal"
+            },
+            "image": "{{ $project->image_cover ? asset($project->image_cover) : asset('images/profile/abdulrahman-hilal-laravel-backend-developer-1.jpg') }}"
+        }
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href={{ asset('fontawesome/css/all.min.css') }}>
@@ -74,6 +105,7 @@
                 <h3 class="text-xl font-bold text-blue-400 mb-3">My Role</h3>
                 <p class="text-lg text-gray-300 mb-4">
                     {!! nl2br(e($project->my_Role)) !!}
+                </p>
 
 
                 <h3 class="text-xl font-bold text-blue-400 mb-3">Visuals & Demo</h3>
@@ -91,9 +123,11 @@
                 <div class="row project-image-gallery">
 
                     @foreach ($project->images as $image)
-                        @if (!$image->images_gallery == null)
+                        @if (!is_null($image->images_gallery))
                             <div class="col-md-6 mb-4">
-                                <img src="{{ asset($image->images_gallery) }}" alt="Project Image" class="img-fluid">
+                                <img src="{{ asset($image->images_gallery) }}"
+                                    alt="{{ $project->title }} image - Laravel backend project by Abdulrahman Hilal"
+                                    class="img-fluid" loading="lazy" decoding="async">
                             </div>
                         @endif
                     @endforeach
@@ -149,3 +183,4 @@
 </body>
 
 </html>
+

@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ProjectController::class, 'index'])->name('portfolio.index');
 Route::get('/projects/{id}', [ProjectController::class, 'show'])->name('project.show');
+Route::view('/gallery', 'portfolio.gallery')->name('portfolio.gallery');
+Route::view('/cv', 'portfolio.cv')->name('portfolio.cv');
+Route::view('/abdulrahman-hilal', 'portfolio.profile')->name('portfolio.profile');
 
 
 Route::get('/c990/',[ProjectController::class, 'create'])->name('project.create');
@@ -25,6 +28,5 @@ Route::put('/projects/{project}/technologies', [ProjectTechnologyController::cla
 Route::put('/projects/{project}/links', [ProjectLinkController::class, 'update'])->name('project.links.update');
 Route::post('/projects/{project}/images', [ProjectImageController::class, 'update'])->name('project.images.update');
 Route::put('/projects/{project}/features', [ProjectFeatureController::class, 'update'])->name('project.features.update');
-
 
 
